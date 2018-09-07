@@ -1,0 +1,2 @@
+# brandColorRecognise
+A szoftverben egyrészt fel kell ismerni a valós színezetű képet, márkajelzést, másrészt pedig egy kiszínező részben a felhasználónak kell egy palettáról kiszíneznie a márkajelzést egy fehér alapon fekete körvonalakkal megrajzolt képen. A felhasználók választásait adatbázisba kell menteni, majd ezeket elemezni, meghatározni, hogy a felhasználók színmemóriája mennyire tér el az eredeti kép színétől. A tesztszoftvert az egyetemen tanuló különböző nemzetiségű hallgatókkal is célszerű kitöltetni.
