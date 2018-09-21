@@ -1,0 +1,10 @@
+C:\Users\szila\Desktop\SZAKDOGA\brandColorRecognise.git\brandcolorrecog\brandcolorrecog\obj\Debug\brandcolorrecog.csprojResolveAssemblyReference.cache
+C:\Users\szila\Desktop\SZAKDOGA\brandColorRecognise.git\brandcolorrecog\brandcolorrecog\obj\Debug\brandcolorrecog.mainMenu.resources
+C:\Users\szila\Desktop\SZAKDOGA\brandColorRecognise.git\brandcolorrecog\brandcolorrecog\obj\Debug\brandcolorrecog.Properties.Resources.resources
+C:\Users\szila\Desktop\SZAKDOGA\brandColorRecognise.git\brandcolorrecog\brandcolorrecog\obj\Debug\brandcolorrecog.csproj.GenerateResource.cache
+C:\Users\szila\Desktop\SZAKDOGA\brandColorRecognise.git\brandcolorrecog\brandcolorrecog\obj\Debug\brandcolorrecog.csproj.CoreCompileInputs.cache
+C:\Users\szila\Desktop\SZAKDOGA\brandColorRecognise.git\brandcolorrecog\brandcolorrecog\bin\Debug\brandcolorrecog.exe.config
+C:\Users\szila\Desktop\SZAKDOGA\brandColorRecognise.git\brandcolorrecog\brandcolorrecog\bin\Debug\brandcolorrecog.exe
+C:\Users\szila\Desktop\SZAKDOGA\brandColorRecognise.git\brandcolorrecog\brandcolorrecog\bin\Debug\brandcolorrecog.pdb
+C:\Users\szila\Desktop\SZAKDOGA\brandColorRecognise.git\brandcolorrecog\brandcolorrecog\obj\Debug\brandcolorrecog.exe
+C:\Users\szila\Desktop\SZAKDOGA\brandColorRecognise.git\brandcolorrecog\brandcolorrecog\obj\Debug\brandcolorrecog.pdb
