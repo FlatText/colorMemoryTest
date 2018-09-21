@@ -6,5 +6,5 @@ A szoftverben egyrészt fel kell ismerni a valós színezetű képet, márkajelz
 
 In the software, the participant should recognise the original colors of a brand, while in the other part, the tester should color a black-white brand logo with the use of a color palette. The user's choice should be saved in a database. This database will be used for further research about color memory of the users of the software.
 
-# Szilárd Váthy, Computer Scientest Bsc
+# Szilárd Váthy, Computer Scientist Bsc
 szilardvathy@gmail.com
