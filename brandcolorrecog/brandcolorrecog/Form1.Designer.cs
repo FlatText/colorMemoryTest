@@ -97,7 +97,9 @@
             this.Controls.Add(this.aboutBtn);
             this.Controls.Add(this.test2Btn);
             this.Controls.Add(this.test1Btn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "mainMenu";
             this.ShowIcon = false;
             this.Text = "Color Memory Test";
