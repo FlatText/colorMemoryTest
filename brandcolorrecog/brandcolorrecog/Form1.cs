@@ -123,31 +123,42 @@ namespace brandcolorrecog
             control.Hide();
             progress.Hide();
             testFrame.Hide();
+            coloringBox.Hide();
         }
 
         private void next_Click(object sender, EventArgs e)
         {
-            if (progress.Value != 100)
+            bool test_1_flag = false;
+            if (picture1.Checked || picture2.Checked || picture3.Checked || picture4.Checked)
+            {
+                test_1_flag = true;
+            }
+            if (progress.Value != 100 && test_1_flag == true)
             {
                 /* Change this to represent the number of the test cases -> 100 / <nr> = 20 */
                 progress.Value += 20; // 5 test case
+                test_1_flag = true;
             }
             else
             {
+                test_1_flag = false;
                 startBox.Hide();
                 control.Show();
                 progress.Show();
                 testFrame.Hide();
                 coloringBox.Show();
                 progress.Value = 0; // Until TO DO is done
-                System.Windows.Forms.MessageBox.Show("You finished the test! Thanks for your participation.");
-                reset_Click(sender, e);
+                //System.Windows.Forms.MessageBox.Show("You finished the test! Thanks for your participation.");
+                //reset_Click(sender, e);
             }
 
-            //Resetting the radiobuttons after choosing an image
-            picture1.Checked = true;
-            picture1.Checked = false;
-
+            if (test_1_flag == true)
+            {
+                //Resetting the radiobuttons after choosing an image
+                picture1.Checked = true;
+                picture1.Checked = false;
+            }
+            
             next.Enabled = false;
             next.BackColor = Color.DimGray;
         }
