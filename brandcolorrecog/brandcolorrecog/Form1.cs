@@ -69,11 +69,18 @@ namespace brandcolorrecog
             pictureBox2.Location = new Point(700, 25);
             pictureBox3.Location = new Point(200, 325);
             pictureBox4.Location = new Point(700, 325);
+
+            /*
+             * 
+             * TO DO: configure the position of coloringBox
+             * 
+             */ 
         
             /* Hide next, back, reset buttons */
             control.Hide();
             progress.Hide();
             testFrame.Hide();
+            coloringBox.Hide();
 
             /* Disable back button, until TO DO some function */
             back.Enabled = false;
@@ -127,9 +134,11 @@ namespace brandcolorrecog
             }
             else
             {
-                /* 
-                 * TO DO - Jump into coloring text 
-                 */
+                startBox.Hide();
+                control.Show();
+                progress.Show();
+                testFrame.Hide();
+                coloringBox.Show();
                 progress.Value = 0; // Until TO DO is done
                 System.Windows.Forms.MessageBox.Show("You finished the test! Thanks for your participation.");
                 reset_Click(sender, e);
@@ -192,6 +201,11 @@ namespace brandcolorrecog
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             picture4.Checked = true;
+        }
+
+        private void colorBtn_Click(object sender, EventArgs e)
+        {
+            colors.ShowDialog();
         }
     }
 }

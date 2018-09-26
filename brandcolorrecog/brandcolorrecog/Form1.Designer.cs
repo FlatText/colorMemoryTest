@@ -34,6 +34,8 @@
             this.exitBtn = new System.Windows.Forms.Button();
             this.pannonLogo = new System.Windows.Forms.PictureBox();
             this.startBox = new System.Windows.Forms.GroupBox();
+            this.resoWarningPic = new System.Windows.Forms.PictureBox();
+            this.resoWarning = new System.Windows.Forms.Label();
             this.reset = new System.Windows.Forms.Button();
             this.next = new System.Windows.Forms.Button();
             this.back = new System.Windows.Forms.Button();
@@ -48,17 +50,19 @@
             this.picture3 = new System.Windows.Forms.RadioButton();
             this.picture2 = new System.Windows.Forms.RadioButton();
             this.progress = new System.Windows.Forms.ProgressBar();
-            this.resoWarning = new System.Windows.Forms.Label();
-            this.resoWarningPic = new System.Windows.Forms.PictureBox();
+            this.coloringBox = new System.Windows.Forms.GroupBox();
+            this.colors = new System.Windows.Forms.ColorDialog();
+            this.colorBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pannonLogo)).BeginInit();
             this.startBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resoWarningPic)).BeginInit();
             this.control.SuspendLayout();
             this.testFrame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.resoWarningPic)).BeginInit();
+            this.coloringBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // test1Btn
@@ -115,6 +119,26 @@
             this.startBox.Size = new System.Drawing.Size(407, 282);
             this.startBox.TabIndex = 5;
             this.startBox.TabStop = false;
+            // 
+            // resoWarningPic
+            // 
+            this.resoWarningPic.Image = ((System.Drawing.Image)(resources.GetObject("resoWarningPic.Image")));
+            this.resoWarningPic.Location = new System.Drawing.Point(6, 80);
+            this.resoWarningPic.Name = "resoWarningPic";
+            this.resoWarningPic.Size = new System.Drawing.Size(20, 19);
+            this.resoWarningPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.resoWarningPic.TabIndex = 6;
+            this.resoWarningPic.TabStop = false;
+            // 
+            // resoWarning
+            // 
+            this.resoWarning.AutoSize = true;
+            this.resoWarning.ForeColor = System.Drawing.Color.Red;
+            this.resoWarning.Location = new System.Drawing.Point(26, 84);
+            this.resoWarning.Name = "resoWarning";
+            this.resoWarning.Size = new System.Drawing.Size(109, 13);
+            this.resoWarning.TabIndex = 5;
+            this.resoWarning.Text = "Please use 1366x768";
             // 
             // reset
             // 
@@ -273,25 +297,29 @@
             this.progress.Size = new System.Drawing.Size(681, 23);
             this.progress.TabIndex = 0;
             // 
-            // resoWarning
+            // coloringBox
             // 
-            this.resoWarning.AutoSize = true;
-            this.resoWarning.ForeColor = System.Drawing.Color.Red;
-            this.resoWarning.Location = new System.Drawing.Point(26, 84);
-            this.resoWarning.Name = "resoWarning";
-            this.resoWarning.Size = new System.Drawing.Size(109, 13);
-            this.resoWarning.TabIndex = 5;
-            this.resoWarning.Text = "Please use 1366x768";
+            this.coloringBox.Controls.Add(this.colorBtn);
+            this.coloringBox.Location = new System.Drawing.Point(734, 55);
+            this.coloringBox.Name = "coloringBox";
+            this.coloringBox.Size = new System.Drawing.Size(492, 287);
+            this.coloringBox.TabIndex = 11;
+            this.coloringBox.TabStop = false;
             // 
-            // resoWarningPic
+            // colors
             // 
-            this.resoWarningPic.Image = ((System.Drawing.Image)(resources.GetObject("resoWarningPic.Image")));
-            this.resoWarningPic.Location = new System.Drawing.Point(6, 80);
-            this.resoWarningPic.Name = "resoWarningPic";
-            this.resoWarningPic.Size = new System.Drawing.Size(20, 19);
-            this.resoWarningPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.resoWarningPic.TabIndex = 6;
-            this.resoWarningPic.TabStop = false;
+            this.colors.AnyColor = true;
+            this.colors.ShowHelp = true;
+            // 
+            // colorBtn
+            // 
+            this.colorBtn.Location = new System.Drawing.Point(15, 23);
+            this.colorBtn.Name = "colorBtn";
+            this.colorBtn.Size = new System.Drawing.Size(41, 32);
+            this.colorBtn.TabIndex = 0;
+            this.colorBtn.Text = "Color";
+            this.colorBtn.UseVisualStyleBackColor = true;
+            this.colorBtn.Click += new System.EventHandler(this.colorBtn_Click);
             // 
             // mainMenu
             // 
@@ -299,7 +327,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(854, 745);
+            this.ClientSize = new System.Drawing.Size(1241, 745);
+            this.Controls.Add(this.coloringBox);
             this.Controls.Add(this.progress);
             this.Controls.Add(this.testFrame);
             this.Controls.Add(this.control);
@@ -314,6 +343,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pannonLogo)).EndInit();
             this.startBox.ResumeLayout(false);
             this.startBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resoWarningPic)).EndInit();
             this.control.ResumeLayout(false);
             this.testFrame.ResumeLayout(false);
             this.testFrame.PerformLayout();
@@ -321,7 +351,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.resoWarningPic)).EndInit();
+            this.coloringBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -349,6 +379,9 @@
         private System.Windows.Forms.RadioButton picture1;
         private System.Windows.Forms.PictureBox resoWarningPic;
         private System.Windows.Forms.Label resoWarning;
+        private System.Windows.Forms.GroupBox coloringBox;
+        private System.Windows.Forms.Button colorBtn;
+        private System.Windows.Forms.ColorDialog colors;
     }
 }
 
