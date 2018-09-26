@@ -1,0 +1,7 @@
+Piros: Coca-Cola, Lego, Vodafone
+Kék: intel, durex, Nivea, hp
+Bordó: Nintendo
+Zöld: Starbucks
+Sárga: Fanta, 
+
+Színezés: Google, Pepsi, Amazon, cisco
