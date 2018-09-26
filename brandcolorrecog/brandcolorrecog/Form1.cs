@@ -16,37 +16,45 @@ namespace brandcolorrecog
         {
             InitializeComponent();
 
+            //enable resolution warning - we dont know the screen resolution yet
+            resoWarning.Show();
+            resoWarningPic.Show();
+
+            //Resolution check
+            Rectangle resolution = Screen.PrimaryScreen.Bounds;
+            int width = resolution.Width;            
+            int height = resolution.Height;
+            Console.WriteLine("Felbontás: {0} x {1}", width, height);
+            if (width == 1366 && height == 768)
+            {          
+                resoWarning.Hide();
+                resoWarningPic.Hide();
+            }
+            
             /* Initial Progress Bar reset */
             progress.Value = 0;
 
             /* Initial Form Size */
             this.Size = new System.Drawing.Size(0, 0);
             this.Height = 350;
-            this.Width = 450;
-            
-            /* Colored Border
-            reset.FlatStyle = FlatStyle.Flat;
-            reset.FlatAppearance.BorderColor = Color.Red;
-            reset.FlatAppearance.BorderSize = 2;
-            */
+            this.Width = 450;           
 
             reset.BackColor = Color.Red;
-            back.BackColor = Color.Yellow;
-            next.BackColor = Color.Green;
-
-            /* Position of each button */
-            //reset.Location = new Point(1320, 705);
-            //back.Location = new Point(1300, 705);
-            //next.Location = new Point(1280, 705);
+            //back.BackColor = Color.Yellow;
+            back.BackColor = Color.DimGray;
+            //next.BackColor = Color.Green;
+            next.BackColor = Color.DimGray;
 
             /* Position of 'control' grpBox */
             control.Location = new Point(1200, 680);
-
             /* Position of progress bar */
             progress.Location = new Point(300, 705);
-
             /* Position of testFrame */
             testFrame.Location = new Point(25, 25);
+            /* Position of colorBox */
+            coloringBox.Location = new Point(25, 25);
+            /* Size of coloringBox */
+            coloringBox.Size = new System.Drawing.Size(1275, 625);
             /* Size of testFrame */
             testFrame.Size = new System.Drawing.Size(1275, 625);
 
@@ -64,15 +72,17 @@ namespace brandcolorrecog
             pictureBox1.Location = new Point(200, 25);
             pictureBox2.Location = new Point(700, 25);
             pictureBox3.Location = new Point(200, 325);
-            pictureBox4.Location = new Point(700, 325);
+            pictureBox4.Location = new Point(700, 325);           
         
             /* Hide next, back, reset buttons */
             control.Hide();
             progress.Hide();
             testFrame.Hide();
+            coloringBox.Hide();
 
             /* Disable back button, until TO DO some function */
-            back.Enabled = false;
+            //back.Enabled = false;
+            back.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -103,16 +113,7 @@ namespace brandcolorrecog
             progress.Show();
             testFrame.Show();
             next.Enabled = false;
-
-            /*
-            test1Btn.Hide();
-            test2Btn.Hide();
-            aboutBtn.Hide();
-            exitBtn.Hide();
-            pannonLogo.Hide();
-            */
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;            
         }
 
         private void reset_Click(object sender, EventArgs e)
@@ -121,57 +122,108 @@ namespace brandcolorrecog
             control.Hide();
             progress.Hide();
             testFrame.Hide();
+            coloringBox.Hide();
         }
 
         private void next_Click(object sender, EventArgs e)
         {
-            if (progress.Value != 100)
+            /* test flags */
+            bool test_1_flag = false;
+            bool test_2_flag = false;
+            /* Let's decide which test is active */
+            if ((picture1.Checked = true) || (picture1.Checked = true) || (picture1.Checked = true) || (picture1.Checked = true))
             {
-                /* Change this to represent the number of the test cases -> 100 / <nr> = 20 */
-                progress.Value += 20; // 5 test case
+                test_1_flag = true;
             }
             else
             {
-                /* 
-                 * TO DO - Jump into coloring text 
-                 */
-                System.Windows.Forms.MessageBox.Show("You finished the test! Thanks for your participation.");
-                reset_Click(sender, e);
+                test_2_flag = true;
             }
 
-            if (picture1.Checked || picture2.Checked || picture3.Checked || picture4.Checked)
+            if (progress.Value != 100 && test_1_flag == true)
             {
-                picture1.Checked = false;
-                picture2.Checked = false;
-                picture3.Checked = false;
-                picture4.Checked = false;
+                /* Change this to represent the number of the test cases -> 100 / <nr> = 20 */
+                progress.Value += 20; // 5 test case
+                test_1_flag = true;
             }
+            else
+            {
+                test_1_flag = false;
+                startBox.Hide();
+                control.Show();
+                progress.Show();
+                testFrame.Hide();
+                coloringBox.Show();
+                progress.Value = 0; // Until TO DO is done
+                //System.Windows.Forms.MessageBox.Show("You finished the test! Thanks for your participation.");
+                //reset_Click(sender, e);
+            }
+
+            if (test_1_flag == true)
+            {
+                //Resetting the radiobuttons after choosing an image
+                picture1.Checked = true;
+                picture1.Checked = false;
+            }
+            
             next.Enabled = false;
+            next.BackColor = Color.DimGray;
         }
 
         private void picture1_CheckedChanged(object sender, EventArgs e)
         {
             next.Enabled = true;
+            next.BackColor = Color.Green;
         }
 
         private void picture2_CheckedChanged(object sender, EventArgs e)
         {
             next.Enabled = true;
+            next.BackColor = Color.Green;
         }
 
         private void picture3_CheckedChanged(object sender, EventArgs e)
         {
             next.Enabled = true;
+            next.BackColor = Color.Green;
         }
 
         private void picture4_CheckedChanged(object sender, EventArgs e)
         {
             next.Enabled = true;
+            next.BackColor = Color.Green;
         }
 
         private void back_Click(object sender, EventArgs e)
         {
-            
+            /*
+             * Currently disabled. May TO DO in the future... ~
+             */ 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            picture1.Checked = true;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            picture2.Checked = true;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            picture3.Checked = true;
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            picture4.Checked = true;
+        }
+
+        private void colorBtn_Click(object sender, EventArgs e)
+        {
+            colors.ShowDialog();
         }
     }
 }
