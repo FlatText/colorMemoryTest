@@ -118,11 +118,20 @@ namespace brandcolorrecog
 
         private void reset_Click(object sender, EventArgs e)
         {
+            /* Resetting the interface */
             startBox.Show();
             control.Hide();
             progress.Hide();
             testFrame.Hide();
             coloringBox.Hide();
+            /* Resetting the progressbar */
+            progress.Value = 0;
+            /* Resetting the radiobuttons after choosing an image */
+            picture1.Checked = true;
+            picture1.Checked = false;
+            /* because no radiobuttons selected, therefore next button is not available
+             * so its color is Grey */
+            next.BackColor = Color.DimGray;
         }
 
         private void next_Click(object sender, EventArgs e)
