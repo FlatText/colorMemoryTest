@@ -16,32 +16,28 @@ namespace brandcolorrecog
         {
             InitializeComponent();
 
+            //enable resolution warning - we dont know the screen resolution yet
+            resoWarning.Show();
+            resoWarningPic.Show();
+
             //Resolution check
             Rectangle resolution = Screen.PrimaryScreen.Bounds;
-            resoWarning.Hide();
-            resoWarningPic.Hide();
-            
-            /*
-            if(System.Windows.Forms.Screen.PrimaryScreen.Primary.ToString == resolution)
-            {
-                resoWarning.Show();
-                resoWarningPic.Show();
+            int width = resolution.Width;            
+            int height = resolution.Height;
+            Console.WriteLine("Felbontás: {0} x {1}", width, height);
+            if (width == 1366 && height == 768)
+            {          
+                resoWarning.Hide();
+                resoWarningPic.Hide();
             }
-            */
-
+            
             /* Initial Progress Bar reset */
             progress.Value = 0;
 
             /* Initial Form Size */
             this.Size = new System.Drawing.Size(0, 0);
             this.Height = 350;
-            this.Width = 450;
-            
-            /* Colored Border
-            reset.FlatStyle = FlatStyle.Flat;
-            reset.FlatAppearance.BorderColor = Color.Red;
-            reset.FlatAppearance.BorderSize = 2;
-            */
+            this.Width = 450;           
 
             reset.BackColor = Color.Red;
             //back.BackColor = Color.Yellow;
@@ -49,17 +45,10 @@ namespace brandcolorrecog
             //next.BackColor = Color.Green;
             next.BackColor = Color.DimGray;
 
-            /* Position of each button */
-            //reset.Location = new Point(1320, 705);
-            //back.Location = new Point(1300, 705);
-            //next.Location = new Point(1280, 705);
-
             /* Position of 'control' grpBox */
             control.Location = new Point(1200, 680);
-
             /* Position of progress bar */
             progress.Location = new Point(300, 705);
-
             /* Position of testFrame */
             testFrame.Location = new Point(25, 25);
             /* Size of testFrame */
