@@ -51,6 +51,10 @@ namespace brandcolorrecog
             progress.Location = new Point(300, 705);
             /* Position of testFrame */
             testFrame.Location = new Point(25, 25);
+            /* Position of colorBox */
+            coloringBox.Location = new Point(25, 25);
+            /* Size of coloringBox */
+            coloringBox.Size = new System.Drawing.Size(1275, 625);
             /* Size of testFrame */
             testFrame.Size = new System.Drawing.Size(1275, 625);
 
@@ -68,13 +72,7 @@ namespace brandcolorrecog
             pictureBox1.Location = new Point(200, 25);
             pictureBox2.Location = new Point(700, 25);
             pictureBox3.Location = new Point(200, 325);
-            pictureBox4.Location = new Point(700, 325);
-
-            /*
-             * 
-             * TO DO: configure the position of coloringBox
-             * 
-             */ 
+            pictureBox4.Location = new Point(700, 325);           
         
             /* Hide next, back, reset buttons */
             control.Hide();
@@ -83,7 +81,8 @@ namespace brandcolorrecog
             coloringBox.Hide();
 
             /* Disable back button, until TO DO some function */
-            back.Enabled = false;
+            //back.Enabled = false;
+            back.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -128,11 +127,19 @@ namespace brandcolorrecog
 
         private void next_Click(object sender, EventArgs e)
         {
+            /* test flags */
             bool test_1_flag = false;
-            if (picture1.Checked || picture2.Checked || picture3.Checked || picture4.Checked)
+            bool test_2_flag = false;
+            /* Let's decide which test is active */
+            if ((picture1.Checked = true) || (picture1.Checked = true) || (picture1.Checked = true) || (picture1.Checked = true))
             {
                 test_1_flag = true;
             }
+            else
+            {
+                test_2_flag = true;
+            }
+
             if (progress.Value != 100 && test_1_flag == true)
             {
                 /* Change this to represent the number of the test cases -> 100 / <nr> = 20 */
@@ -190,7 +197,7 @@ namespace brandcolorrecog
         private void back_Click(object sender, EventArgs e)
         {
             /*
-             * TO DO
+             * Currently disabled. May TO DO in the future... ~
              */ 
         }
 
