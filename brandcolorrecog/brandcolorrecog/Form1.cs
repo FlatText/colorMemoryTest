@@ -16,6 +16,19 @@ namespace brandcolorrecog
         {
             InitializeComponent();
 
+            //Resolution check
+            Rectangle resolution = Screen.PrimaryScreen.Bounds;
+            resoWarning.Hide();
+            resoWarningPic.Hide();
+            
+            /*
+            if(System.Windows.Forms.Screen.PrimaryScreen.Primary.ToString == resolution)
+            {
+                resoWarning.Show();
+                resoWarningPic.Show();
+            }
+            */
+
             /* Initial Progress Bar reset */
             progress.Value = 0;
 
@@ -31,8 +44,10 @@ namespace brandcolorrecog
             */
 
             reset.BackColor = Color.Red;
-            back.BackColor = Color.Yellow;
-            next.BackColor = Color.Green;
+            //back.BackColor = Color.Yellow;
+            back.BackColor = Color.DimGray;
+            //next.BackColor = Color.Green;
+            next.BackColor = Color.DimGray;
 
             /* Position of each button */
             //reset.Location = new Point(1320, 705);
@@ -103,16 +118,7 @@ namespace brandcolorrecog
             progress.Show();
             testFrame.Show();
             next.Enabled = false;
-
-            /*
-            test1Btn.Hide();
-            test2Btn.Hide();
-            aboutBtn.Hide();
-            exitBtn.Hide();
-            pannonLogo.Hide();
-            */
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;            
         }
 
         private void reset_Click(object sender, EventArgs e)
@@ -135,43 +141,68 @@ namespace brandcolorrecog
                 /* 
                  * TO DO - Jump into coloring text 
                  */
+                progress.Value = 0; // Until TO DO is done
                 System.Windows.Forms.MessageBox.Show("You finished the test! Thanks for your participation.");
                 reset_Click(sender, e);
             }
 
-            if (picture1.Checked || picture2.Checked || picture3.Checked || picture4.Checked)
-            {
-                picture1.Checked = false;
-                picture2.Checked = false;
-                picture3.Checked = false;
-                picture4.Checked = false;
-            }
+            //Resetting the radiobuttons after choosing an image
+            picture1.Checked = true;
+            picture1.Checked = false;
+
             next.Enabled = false;
+            next.BackColor = Color.DimGray;
         }
 
         private void picture1_CheckedChanged(object sender, EventArgs e)
         {
             next.Enabled = true;
+            next.BackColor = Color.Green;
         }
 
         private void picture2_CheckedChanged(object sender, EventArgs e)
         {
             next.Enabled = true;
+            next.BackColor = Color.Green;
         }
 
         private void picture3_CheckedChanged(object sender, EventArgs e)
         {
             next.Enabled = true;
+            next.BackColor = Color.Green;
         }
 
         private void picture4_CheckedChanged(object sender, EventArgs e)
         {
             next.Enabled = true;
+            next.BackColor = Color.Green;
         }
 
         private void back_Click(object sender, EventArgs e)
         {
-            
+            /*
+             * TO DO
+             */ 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            picture1.Checked = true;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            picture2.Checked = true;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            picture3.Checked = true;
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            picture4.Checked = true;
         }
     }
 }

@@ -39,23 +39,26 @@
             this.back = new System.Windows.Forms.Button();
             this.control = new System.Windows.Forms.GroupBox();
             this.testFrame = new System.Windows.Forms.GroupBox();
-            this.progress = new System.Windows.Forms.ProgressBar();
-            this.picture1 = new System.Windows.Forms.RadioButton();
-            this.picture2 = new System.Windows.Forms.RadioButton();
-            this.picture3 = new System.Windows.Forms.RadioButton();
-            this.picture4 = new System.Windows.Forms.RadioButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picture4 = new System.Windows.Forms.RadioButton();
+            this.picture1 = new System.Windows.Forms.RadioButton();
+            this.picture3 = new System.Windows.Forms.RadioButton();
+            this.picture2 = new System.Windows.Forms.RadioButton();
+            this.progress = new System.Windows.Forms.ProgressBar();
+            this.resoWarning = new System.Windows.Forms.Label();
+            this.resoWarningPic = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pannonLogo)).BeginInit();
             this.startBox.SuspendLayout();
             this.control.SuspendLayout();
             this.testFrame.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resoWarningPic)).BeginInit();
             this.SuspendLayout();
             // 
             // test1Btn
@@ -70,7 +73,7 @@
             // 
             // aboutBtn
             // 
-            this.aboutBtn.Location = new System.Drawing.Point(7, 119);
+            this.aboutBtn.Location = new System.Drawing.Point(7, 142);
             this.aboutBtn.Name = "aboutBtn";
             this.aboutBtn.Size = new System.Drawing.Size(120, 48);
             this.aboutBtn.TabIndex = 2;
@@ -101,6 +104,8 @@
             // 
             // startBox
             // 
+            this.startBox.Controls.Add(this.resoWarningPic);
+            this.startBox.Controls.Add(this.resoWarning);
             this.startBox.Controls.Add(this.pannonLogo);
             this.startBox.Controls.Add(this.exitBtn);
             this.startBox.Controls.Add(this.aboutBtn);
@@ -173,45 +178,49 @@
             this.testFrame.TabStop = false;
             this.testFrame.Text = "id: testFrame";
             // 
-            // progress
+            // pictureBox4
             // 
-            this.progress.Location = new System.Drawing.Point(437, 12);
-            this.progress.Name = "progress";
-            this.progress.Size = new System.Drawing.Size(681, 23);
-            this.progress.TabIndex = 0;
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(411, 224);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(270, 170);
+            this.pictureBox4.TabIndex = 7;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // picture1
+            // pictureBox3
             // 
-            this.picture1.AutoSize = true;
-            this.picture1.Location = new System.Drawing.Point(171, 195);
-            this.picture1.Name = "picture1";
-            this.picture1.Size = new System.Drawing.Size(14, 13);
-            this.picture1.TabIndex = 0;
-            this.picture1.TabStop = true;
-            this.picture1.UseVisualStyleBackColor = true;
-            this.picture1.CheckedChanged += new System.EventHandler(this.picture1_CheckedChanged);
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(45, 224);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(270, 170);
+            this.pictureBox3.TabIndex = 6;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // picture2
+            // pictureBox2
             // 
-            this.picture2.AutoSize = true;
-            this.picture2.Location = new System.Drawing.Point(545, 195);
-            this.picture2.Name = "picture2";
-            this.picture2.Size = new System.Drawing.Size(14, 13);
-            this.picture2.TabIndex = 1;
-            this.picture2.TabStop = true;
-            this.picture2.UseVisualStyleBackColor = true;
-            this.picture2.CheckedChanged += new System.EventHandler(this.picture2_CheckedChanged);
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(411, 19);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(270, 170);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // picture3
+            // pictureBox1
             // 
-            this.picture3.AutoSize = true;
-            this.picture3.Location = new System.Drawing.Point(171, 398);
-            this.picture3.Name = "picture3";
-            this.picture3.Size = new System.Drawing.Size(14, 13);
-            this.picture3.TabIndex = 2;
-            this.picture3.TabStop = true;
-            this.picture3.UseVisualStyleBackColor = true;
-            this.picture3.CheckedChanged += new System.EventHandler(this.picture3_CheckedChanged);
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(45, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(270, 170);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // picture4
             // 
@@ -224,45 +233,65 @@
             this.picture4.UseVisualStyleBackColor = true;
             this.picture4.CheckedChanged += new System.EventHandler(this.picture4_CheckedChanged);
             // 
-            // pictureBox1
+            // picture1
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(45, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(270, 170);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.picture1.AutoSize = true;
+            this.picture1.Location = new System.Drawing.Point(171, 195);
+            this.picture1.Name = "picture1";
+            this.picture1.Size = new System.Drawing.Size(14, 13);
+            this.picture1.TabIndex = 0;
+            this.picture1.TabStop = true;
+            this.picture1.UseVisualStyleBackColor = true;
+            this.picture1.CheckedChanged += new System.EventHandler(this.picture1_CheckedChanged);
             // 
-            // pictureBox2
+            // picture3
             // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(411, 19);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(270, 170);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
+            this.picture3.AutoSize = true;
+            this.picture3.Location = new System.Drawing.Point(171, 398);
+            this.picture3.Name = "picture3";
+            this.picture3.Size = new System.Drawing.Size(14, 13);
+            this.picture3.TabIndex = 2;
+            this.picture3.TabStop = true;
+            this.picture3.UseVisualStyleBackColor = true;
+            this.picture3.CheckedChanged += new System.EventHandler(this.picture3_CheckedChanged);
             // 
-            // pictureBox3
+            // picture2
             // 
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(45, 224);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(270, 170);
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
+            this.picture2.AutoSize = true;
+            this.picture2.Location = new System.Drawing.Point(545, 195);
+            this.picture2.Name = "picture2";
+            this.picture2.Size = new System.Drawing.Size(14, 13);
+            this.picture2.TabIndex = 1;
+            this.picture2.TabStop = true;
+            this.picture2.UseVisualStyleBackColor = true;
+            this.picture2.CheckedChanged += new System.EventHandler(this.picture2_CheckedChanged);
             // 
-            // pictureBox4
+            // progress
             // 
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(411, 224);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(270, 170);
-            this.pictureBox4.TabIndex = 7;
-            this.pictureBox4.TabStop = false;
+            this.progress.Location = new System.Drawing.Point(437, 12);
+            this.progress.Name = "progress";
+            this.progress.Size = new System.Drawing.Size(681, 23);
+            this.progress.TabIndex = 0;
+            // 
+            // resoWarning
+            // 
+            this.resoWarning.AutoSize = true;
+            this.resoWarning.ForeColor = System.Drawing.Color.Red;
+            this.resoWarning.Location = new System.Drawing.Point(26, 84);
+            this.resoWarning.Name = "resoWarning";
+            this.resoWarning.Size = new System.Drawing.Size(109, 13);
+            this.resoWarning.TabIndex = 5;
+            this.resoWarning.Text = "Please use 1366x768";
+            // 
+            // resoWarningPic
+            // 
+            this.resoWarningPic.Image = ((System.Drawing.Image)(resources.GetObject("resoWarningPic.Image")));
+            this.resoWarningPic.Location = new System.Drawing.Point(6, 80);
+            this.resoWarningPic.Name = "resoWarningPic";
+            this.resoWarningPic.Size = new System.Drawing.Size(20, 19);
+            this.resoWarningPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.resoWarningPic.TabIndex = 6;
+            this.resoWarningPic.TabStop = false;
             // 
             // mainMenu
             // 
@@ -288,10 +317,11 @@
             this.control.ResumeLayout(false);
             this.testFrame.ResumeLayout(false);
             this.testFrame.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resoWarningPic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -317,6 +347,8 @@
         private System.Windows.Forms.RadioButton picture3;
         private System.Windows.Forms.RadioButton picture2;
         private System.Windows.Forms.RadioButton picture1;
+        private System.Windows.Forms.PictureBox resoWarningPic;
+        private System.Windows.Forms.Label resoWarning;
     }
 }
 
