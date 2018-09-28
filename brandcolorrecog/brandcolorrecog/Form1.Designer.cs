@@ -51,8 +51,19 @@
             this.picture2 = new System.Windows.Forms.RadioButton();
             this.progress = new System.Windows.Forms.ProgressBar();
             this.coloringBox = new System.Windows.Forms.GroupBox();
-            this.colors = new System.Windows.Forms.ColorDialog();
             this.colorBtn = new System.Windows.Forms.Button();
+            this.colors = new System.Windows.Forms.ColorDialog();
+            this.registerBox = new System.Windows.Forms.GroupBox();
+            this.isFilled = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.registerBtn = new System.Windows.Forms.Button();
+            this.schoolBox = new System.Windows.Forms.ComboBox();
+            this.nat_textBox = new System.Windows.Forms.TextBox();
+            this.name_textBox = new System.Windows.Forms.TextBox();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             ((System.ComponentModel.ISupportInitialize)(this.pannonLogo)).BeginInit();
             this.startBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resoWarningPic)).BeginInit();
@@ -63,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.coloringBox.SuspendLayout();
+            this.registerBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // test1Btn
@@ -302,14 +314,9 @@
             this.coloringBox.Controls.Add(this.colorBtn);
             this.coloringBox.Location = new System.Drawing.Point(734, 55);
             this.coloringBox.Name = "coloringBox";
-            this.coloringBox.Size = new System.Drawing.Size(492, 287);
+            this.coloringBox.Size = new System.Drawing.Size(475, 202);
             this.coloringBox.TabIndex = 11;
             this.coloringBox.TabStop = false;
-            // 
-            // colors
-            // 
-            this.colors.AnyColor = true;
-            this.colors.ShowHelp = true;
             // 
             // colorBtn
             // 
@@ -321,13 +328,136 @@
             this.colorBtn.UseVisualStyleBackColor = true;
             this.colorBtn.Click += new System.EventHandler(this.colorBtn_Click);
             // 
+            // colors
+            // 
+            this.colors.AnyColor = true;
+            this.colors.ShowHelp = true;
+            // 
+            // registerBox
+            // 
+            this.registerBox.Controls.Add(this.isFilled);
+            this.registerBox.Controls.Add(this.label4);
+            this.registerBox.Controls.Add(this.label3);
+            this.registerBox.Controls.Add(this.label2);
+            this.registerBox.Controls.Add(this.label1);
+            this.registerBox.Controls.Add(this.registerBtn);
+            this.registerBox.Controls.Add(this.schoolBox);
+            this.registerBox.Controls.Add(this.nat_textBox);
+            this.registerBox.Controls.Add(this.name_textBox);
+            this.registerBox.Controls.Add(this.monthCalendar1);
+            this.registerBox.Location = new System.Drawing.Point(759, 291);
+            this.registerBox.Name = "registerBox";
+            this.registerBox.Size = new System.Drawing.Size(314, 422);
+            this.registerBox.TabIndex = 12;
+            this.registerBox.TabStop = false;
+            this.registerBox.Text = "New Test User";
+            // 
+            // isFilled
+            // 
+            this.isFilled.AutoSize = true;
+            this.isFilled.Location = new System.Drawing.Point(38, 366);
+            this.isFilled.Name = "isFilled";
+            this.isFilled.Size = new System.Drawing.Size(67, 17);
+            this.isFilled.TabIndex = 9;
+            this.isFilled.Text = "All filled?";
+            this.isFilled.UseVisualStyleBackColor = true;
+            this.isFilled.CheckedChanged += new System.EventHandler(this.isFilled_CheckedChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(124, 150);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Birth Date";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 93);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Faculty";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(164, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Nationality";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Name";
+            // 
+            // registerBtn
+            // 
+            this.registerBtn.Location = new System.Drawing.Point(143, 359);
+            this.registerBtn.Name = "registerBtn";
+            this.registerBtn.Size = new System.Drawing.Size(135, 29);
+            this.registerBtn.TabIndex = 4;
+            this.registerBtn.Text = "OK";
+            this.registerBtn.UseVisualStyleBackColor = true;
+            this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
+            // 
+            // schoolBox
+            // 
+            this.schoolBox.FormattingEnabled = true;
+            this.schoolBox.Items.AddRange(new object[] {
+            "PE MIK",
+            "PE MK",
+            "PE GTK",
+            "PE MFTK",
+            "ERASMUS (foreign student)",
+            "non-university student"});
+            this.schoolBox.Location = new System.Drawing.Point(28, 118);
+            this.schoolBox.Name = "schoolBox";
+            this.schoolBox.Size = new System.Drawing.Size(168, 21);
+            this.schoolBox.TabIndex = 3;
+            this.schoolBox.SelectedIndexChanged += new System.EventHandler(this.schoolBox_SelectedIndexChanged);
+            // 
+            // nat_textBox
+            // 
+            this.nat_textBox.Location = new System.Drawing.Point(167, 58);
+            this.nat_textBox.Name = "nat_textBox";
+            this.nat_textBox.Size = new System.Drawing.Size(100, 20);
+            this.nat_textBox.TabIndex = 2;
+            this.nat_textBox.TextChanged += new System.EventHandler(this.nat_textBox_TextChanged);
+            // 
+            // name_textBox
+            // 
+            this.name_textBox.Location = new System.Drawing.Point(28, 58);
+            this.name_textBox.Name = "name_textBox";
+            this.name_textBox.Size = new System.Drawing.Size(100, 20);
+            this.name_textBox.TabIndex = 1;
+            this.name_textBox.TextChanged += new System.EventHandler(this.name_textBox_TextChanged);
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(63, 166);
+            this.monthCalendar1.MaxSelectionCount = 1;
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.ShowToday = false;
+            this.monthCalendar1.TabIndex = 0;
+            this.monthCalendar1.TodayDate = new System.DateTime(1996, 1, 21, 0, 0, 0, 0);
+            // 
             // mainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1241, 745);
+            this.ClientSize = new System.Drawing.Size(1366, 745);
+            this.Controls.Add(this.registerBox);
             this.Controls.Add(this.coloringBox);
             this.Controls.Add(this.progress);
             this.Controls.Add(this.testFrame);
@@ -352,6 +482,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.coloringBox.ResumeLayout(false);
+            this.registerBox.ResumeLayout(false);
+            this.registerBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -382,6 +514,17 @@
         private System.Windows.Forms.GroupBox coloringBox;
         private System.Windows.Forms.Button colorBtn;
         private System.Windows.Forms.ColorDialog colors;
+        private System.Windows.Forms.GroupBox registerBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button registerBtn;
+        private System.Windows.Forms.ComboBox schoolBox;
+        private System.Windows.Forms.TextBox nat_textBox;
+        private System.Windows.Forms.TextBox name_textBox;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox isFilled;
     }
 }
 

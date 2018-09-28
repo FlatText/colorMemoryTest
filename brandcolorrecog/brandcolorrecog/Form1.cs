@@ -16,7 +16,11 @@ namespace brandcolorrecog
         {
             InitializeComponent();
 
+            /* FOR FUTURE USE FOR TEST_2 */
+            //pannonLogo.BackColor = Color.Red;
+
             //enable resolution warning - we dont know the screen resolution yet
+            test1Btn.Enabled = false;
             resoWarning.Show();
             resoWarningPic.Show();
 
@@ -24,11 +28,12 @@ namespace brandcolorrecog
             Rectangle resolution = Screen.PrimaryScreen.Bounds;
             int width = resolution.Width;            
             int height = resolution.Height;
-            Console.WriteLine("Felbontás: {0} x {1}", width, height);
+            Console.WriteLine("Felbontás: {0} x {1}", width, height); /* FOR DEBUG */ 
             if (width == 1366 && height == 768)
             {          
                 resoWarning.Hide();
                 resoWarningPic.Hide();
+                test1Btn.Enabled = true;
             }
             
             /* Initial Progress Bar reset */
@@ -39,10 +44,9 @@ namespace brandcolorrecog
             this.Height = 350;
             this.Width = 450;           
 
+            /* Setting the colors of the buttons */
             reset.BackColor = Color.Red;
-            //back.BackColor = Color.Yellow;
             back.BackColor = Color.DimGray;
-            //next.BackColor = Color.Green;
             next.BackColor = Color.DimGray;
 
             /* Position of 'control' grpBox */
@@ -53,6 +57,8 @@ namespace brandcolorrecog
             testFrame.Location = new Point(25, 25);
             /* Position of colorBox */
             coloringBox.Location = new Point(25, 25);
+            /* Position of registerForm */
+            registerBox.Location = new Point(25, 25);
             /* Size of coloringBox */
             coloringBox.Size = new System.Drawing.Size(1275, 625);
             /* Size of testFrame */
@@ -74,11 +80,12 @@ namespace brandcolorrecog
             pictureBox3.Location = new Point(200, 325);
             pictureBox4.Location = new Point(700, 325);           
         
-            /* Hide next, back, reset buttons */
+            /* Hide next, back, reset buttons and interfaces */
             control.Hide();
             progress.Hide();
             testFrame.Hide();
             coloringBox.Hide();
+            registerBox.Hide();
 
             /* Disable back button, until TO DO some function */
             //back.Enabled = false;
@@ -108,21 +115,100 @@ namespace brandcolorrecog
 
         private void test1Btn_Click(object sender, EventArgs e)
         {
-            startBox.Hide();
+            startBox.Hide();            
+            registerBox.Show();
+            registerBtn.Enabled = false;
+            this.Size = new System.Drawing.Size(385, 515);
+        }
+        /* flags to determine that the form is filled */
+        bool isFilled_flag_1 = false;
+        bool isFilled_flag_2 = false;
+        bool isFilled_flag_3 = false;
+        private void name_textBox_TextChanged(object sender, EventArgs e)
+        {
+            isFilled_flag_1 = true;
+        }
+        private void nat_textBox_TextChanged(object sender, EventArgs e)
+        {
+            isFilled_flag_2 = true;
+        }
+        private void schoolBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isFilled_flag_3 = true;
+        }
+        private void isFilled_CheckedChanged(object sender, EventArgs e)
+        {
+            if (isFilled_flag_1 == true && isFilled_flag_2 == true && isFilled_flag_3 == true)
+            {
+                registerBtn.Enabled = true;
+            }
+            else
+            {
+                if (isFilled.Checked != false)
+                {
+                    System.Windows.Forms.MessageBox.Show("Please fill the boxes!");
+                }
+                else
+                {
+                    /* DO NOTHING I GUESS? */
+
+                }
+            }
+        }
+        private void registerBtn_Click(object sender, EventArgs e)
+        {
+            /* Store the data */
+
+            /*
+             *  TO DO
+             *  User Class
+             */
+
+            TestUser Tester1 = new TestUser(
+                name_textBox.Text,
+                nat_textBox.Text,
+                schoolBox.Text,
+                monthCalendar1.SelectionRange.Start.ToString()
+                );
+
+            /* Debug Class object creating */
+            Console.WriteLine("Name: {0}", Tester1.getName());
+            Console.WriteLine("Nationality: {0}", Tester1.getNat());
+            Console.WriteLine("Faculty: {0}", Tester1.getFaculty());
+            Console.WriteLine("Birth: {0}", Tester1.getBirthdate());
+
+            /* Reset form for the next instance */
+            registerBtn.Enabled = false;
+            isFilled.Checked = false;
+            next.Enabled = false;
+            isFilled_flag_1 = false;
+            isFilled_flag_2 = false;
+            isFilled_flag_3 = false;
+
+            /* Open up the next part */
+            registerBox.Hide();
             control.Show();
             progress.Show();
             testFrame.Show();
-            next.Enabled = false;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;            
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;         
         }
 
         private void reset_Click(object sender, EventArgs e)
         {
+            /* Resetting the interface */
             startBox.Show();
             control.Hide();
             progress.Hide();
             testFrame.Hide();
             coloringBox.Hide();
+            /* Resetting the progressbar */
+            progress.Value = 0;
+            /* Resetting the radiobuttons after choosing an image */
+            picture1.Checked = true;
+            picture1.Checked = false;
+            /* because no radiobuttons selected, therefore next button is not available
+             * so its color is Grey */
+            next.BackColor = Color.DimGray;
         }
 
         private void next_Click(object sender, EventArgs e)
@@ -130,8 +216,14 @@ namespace brandcolorrecog
             /* test flags */
             bool test_1_flag = false;
             bool test_2_flag = false;
+
             /* Let's decide which test is active */
-            if ((picture1.Checked = true) || (picture1.Checked = true) || (picture1.Checked = true) || (picture1.Checked = true))
+            if (
+                (picture1.Checked = true) || 
+                (picture1.Checked = true) || 
+                (picture1.Checked = true) || 
+                (picture1.Checked = true)
+                )
             {
                 test_1_flag = true;
             }
@@ -225,5 +317,7 @@ namespace brandcolorrecog
         {
             colors.ShowDialog();
         }
+
+
     }
 }
