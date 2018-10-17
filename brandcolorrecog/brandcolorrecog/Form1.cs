@@ -14,10 +14,7 @@ namespace brandcolorrecog
     {
         public mainMenu()
         {
-            InitializeComponent();            
-
-            /* FOR FUTURE USE FOR TEST_2 */
-            //pannonLogo.BackColor = Color.Red;
+            InitializeComponent();
 
             //enable resolution warning - we dont know the screen resolution yet
             test1Btn.Enabled = false;
@@ -26,23 +23,23 @@ namespace brandcolorrecog
 
             //Resolution check
             Rectangle resolution = Screen.PrimaryScreen.Bounds;
-            int width = resolution.Width;            
+            int width = resolution.Width;
             int height = resolution.Height;
-            Console.WriteLine("Felbontás: {0} x {1}", width, height); /* FOR DEBUG */ 
+            Console.WriteLine("Felbontás: {0} x {1}", width, height); /* FOR DEBUG */
             if (width == 1920 && height == 1080)
-            {          
+            {
                 resoWarning.Hide();
                 resoWarningPic.Hide();
                 test1Btn.Enabled = true;
             }
-            
+
             /* Initial Progress Bar reset */
             progress.Value = 0;
 
             /* Initial Form Size */
             this.Size = new System.Drawing.Size(0, 0);
             this.Height = 350;
-            this.Width = 450;           
+            this.Width = 450;
 
             /* Setting the colors of the buttons */
             reset.BackColor = Color.Red;
@@ -64,22 +61,28 @@ namespace brandcolorrecog
             /* Size of testFrame */
             testFrame.Size = new System.Drawing.Size(1800, 925);
 
-            /* Picture 1-2-3-4 & Radiobuttons 1-2-3-4 */
+            /* Picture 1-6 & Radiobuttons 1-6 */
             pictureBox1.Size = new System.Drawing.Size(370, 270);
             pictureBox2.Size = new System.Drawing.Size(370, 270);
             pictureBox3.Size = new System.Drawing.Size(370, 270);
-            pictureBox4.Size = new System.Drawing.Size(370, 270);                     
+            pictureBox4.Size = new System.Drawing.Size(370, 270);
+            pictureBox5.Size = new System.Drawing.Size(370, 270);
+            pictureBox6.Size = new System.Drawing.Size(370, 270);
 
-            picture1.Location = new Point(180, 150);
-            picture2.Location = new Point(680, 150);
-            picture3.Location = new Point(180, 450);
-            picture4.Location = new Point(680, 450);
+            pictureBox1.Location = new Point(200, 200);
+            pictureBox2.Location = new Point(700, 200);
+            pictureBox3.Location = new Point(1200, 200);
+            pictureBox4.Location = new Point(200, 600);
+            pictureBox5.Location = new Point(700, 600);
+            pictureBox6.Location = new Point(1200, 600);
 
-            pictureBox1.Location = new Point(200, 25);
-            pictureBox2.Location = new Point(700, 25);
-            pictureBox3.Location = new Point(200, 325);
-            pictureBox4.Location = new Point(700, 325);           
-        
+            picture1.Location = new Point(180, 335);
+            picture2.Location = new Point(680, 335);
+            picture3.Location = new Point(1180, 335);
+            picture4.Location = new Point(180, 735);
+            picture5.Location = new Point(680, 735);
+            picture6.Location = new Point(1180, 735);
+
             /* Hide next, back, reset buttons and interfaces */
             control.Hide();
             progress.Hide();
@@ -88,13 +91,13 @@ namespace brandcolorrecog
             registerBox.Hide();
 
             /* Disable back button, until TO DO some function */
-            //back.Enabled = false;
-            back.Hide();
+            back.Enabled = false;
+            //back.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -104,8 +107,8 @@ namespace brandcolorrecog
 
         private void aboutBtn_Click(object sender, EventArgs e) /* calling the about page */
         {
-            AboutBox box = new AboutBox(); /*create a new AboutBox object */          
-            box.ShowDialog(); /* open it */            
+            AboutBox box = new AboutBox(); /*create a new AboutBox object */
+            box.ShowDialog(); /* open it */
         }
 
         private void pannonLogo_Click(object sender, EventArgs e)
@@ -115,10 +118,10 @@ namespace brandcolorrecog
 
         private void test1Btn_Click(object sender, EventArgs e)
         {
-            startBox.Hide();            
+            startBox.Hide();
             registerBox.Show();
             registerBtn.Enabled = false;
-            this.Size = new System.Drawing.Size(385, 515);
+            this.Size = new System.Drawing.Size(385, 530);
         }
 
         /* flags to determine that the form is filled */
@@ -156,23 +159,20 @@ namespace brandcolorrecog
         {
             /* Store the data */
 
-            /*
-             *  TO DO
-             *  User Class
-             */
-
             TestUser Tester1 = new TestUser(
                 name_textBox.Text,
                 nat_textBox.Text,
                 schoolBox.Text,
-                monthCalendar1.SelectionRange.Start.ToString()
+                ageTrackBar.Value,
+                occup_textBox.Text
                 );
 
             /* Debug Class object creating */
             Console.WriteLine("Name: {0}", Tester1.getName());
             Console.WriteLine("Nationality: {0}", Tester1.getNat());
             Console.WriteLine("Faculty: {0}", Tester1.getFaculty());
-            Console.WriteLine("Birth: {0}", Tester1.getBirthdate());
+            Console.WriteLine("Age: {0}", Tester1.getAge());
+            Console.WriteLine("Occupation: {0}", Tester1.getOccup());
 
             /* Reset form for the next instance */
             registerBtn.Enabled = false;
@@ -187,7 +187,7 @@ namespace brandcolorrecog
             control.Show();
             progress.Show();
             testFrame.Show();
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;         
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
         private void reset_Click(object sender, EventArgs e)
@@ -216,10 +216,10 @@ namespace brandcolorrecog
 
             /* Let's decide which test is active */
             if (
-                (picture1.Checked = true) || 
-                (picture1.Checked = true) || 
-                (picture1.Checked = true) || 
-                (picture1.Checked = true)
+                (picture1.Checked = true) ||
+                (picture2.Checked = true) ||
+                (picture3.Checked = true) ||
+                (picture4.Checked = true)
                 )
             {
                 test_1_flag = true;
@@ -264,7 +264,14 @@ namespace brandcolorrecog
                 progress.Show();
                 control.Show();
             }
-
+            else if (test_2_flag == true)
+            {
+                /* TO DO */
+            }
+            else
+            {
+                /* ops */
+            }
 
             next.Enabled = false;
             next.BackColor = Color.DimGray;
@@ -298,7 +305,7 @@ namespace brandcolorrecog
         {
             /*
              * Currently disabled. May TO DO in the future... ~
-             */ 
+             */
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -320,6 +327,15 @@ namespace brandcolorrecog
         {
             picture4.Checked = true;
         }
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            picture5.Checked = true;
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            picture6.Checked = true;
+        }
 
         private void colorBtn_Click(object sender, EventArgs e)
         {
@@ -327,8 +343,22 @@ namespace brandcolorrecog
         }
         void betweenTestDelay(int _sec)
         {
-            System.Threading.Thread.Sleep(_sec*1000);
+            System.Threading.Thread.Sleep(_sec * 1000);
         }
 
+        private void ageTrackBar_ValueChanged(object sender, EventArgs e)
+        {
+            ageBox.Text = ageTrackBar.Value.ToString();
+        }
+        private void ageBox_TextChanged(object sender, EventArgs e)
+        {
+            /*
+             * No need for this if ageBox is not enabled.
+                if (Int32.Parse(ageBox.Text) > 17 && Int32.Parse(ageBox.Text) < 39)
+                {
+                    ageTrackBar.Value = Int32.Parse(ageBox.Text);
+                }
+             */
+        }
     }
 }

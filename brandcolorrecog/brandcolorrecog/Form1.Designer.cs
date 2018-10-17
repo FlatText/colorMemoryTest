@@ -41,6 +41,10 @@
             this.back = new System.Windows.Forms.Button();
             this.control = new System.Windows.Forms.GroupBox();
             this.testFrame = new System.Windows.Forms.GroupBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.picture6 = new System.Windows.Forms.RadioButton();
+            this.picture5 = new System.Windows.Forms.RadioButton();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -63,18 +67,24 @@
             this.schoolBox = new System.Windows.Forms.ComboBox();
             this.nat_textBox = new System.Windows.Forms.TextBox();
             this.name_textBox = new System.Windows.Forms.TextBox();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.ageTrackBar = new System.Windows.Forms.TrackBar();
+            this.ageBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.occup_textBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pannonLogo)).BeginInit();
             this.startBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resoWarningPic)).BeginInit();
             this.control.SuspendLayout();
             this.testFrame.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.coloringBox.SuspendLayout();
             this.registerBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ageTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // test1Btn
@@ -199,6 +209,10 @@
             // 
             // testFrame
             // 
+            this.testFrame.Controls.Add(this.pictureBox5);
+            this.testFrame.Controls.Add(this.pictureBox6);
+            this.testFrame.Controls.Add(this.picture6);
+            this.testFrame.Controls.Add(this.picture5);
             this.testFrame.Controls.Add(this.pictureBox4);
             this.testFrame.Controls.Add(this.pictureBox3);
             this.testFrame.Controls.Add(this.pictureBox2);
@@ -209,16 +223,58 @@
             this.testFrame.Controls.Add(this.picture2);
             this.testFrame.Location = new System.Drawing.Point(14, 303);
             this.testFrame.Name = "testFrame";
-            this.testFrame.Size = new System.Drawing.Size(728, 427);
+            this.testFrame.Size = new System.Drawing.Size(984, 427);
             this.testFrame.TabIndex = 10;
             this.testFrame.TabStop = false;
             this.testFrame.Text = "id: testFrame";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(708, 224);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(270, 170);
+            this.pictureBox5.TabIndex = 11;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(708, 19);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(270, 170);
+            this.pictureBox6.TabIndex = 10;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
+            // picture6
+            // 
+            this.picture6.AutoSize = true;
+            this.picture6.Location = new System.Drawing.Point(842, 398);
+            this.picture6.Name = "picture6";
+            this.picture6.Size = new System.Drawing.Size(14, 13);
+            this.picture6.TabIndex = 9;
+            this.picture6.TabStop = true;
+            this.picture6.UseVisualStyleBackColor = true;
+            // 
+            // picture5
+            // 
+            this.picture5.AutoSize = true;
+            this.picture5.Location = new System.Drawing.Point(842, 195);
+            this.picture5.Name = "picture5";
+            this.picture5.Size = new System.Drawing.Size(14, 13);
+            this.picture5.TabIndex = 8;
+            this.picture5.TabStop = true;
+            this.picture5.UseVisualStyleBackColor = true;
             // 
             // pictureBox4
             // 
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(411, 224);
+            this.pictureBox4.Location = new System.Drawing.Point(374, 222);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(270, 170);
             this.pictureBox4.TabIndex = 7;
@@ -240,7 +296,7 @@
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(411, 19);
+            this.pictureBox2.Location = new System.Drawing.Point(374, 19);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(270, 170);
             this.pictureBox2.TabIndex = 5;
@@ -335,6 +391,10 @@
             // 
             // registerBox
             // 
+            this.registerBox.Controls.Add(this.label5);
+            this.registerBox.Controls.Add(this.occup_textBox);
+            this.registerBox.Controls.Add(this.ageBox);
+            this.registerBox.Controls.Add(this.ageTrackBar);
             this.registerBox.Controls.Add(this.isFilled);
             this.registerBox.Controls.Add(this.label4);
             this.registerBox.Controls.Add(this.label3);
@@ -344,10 +404,9 @@
             this.registerBox.Controls.Add(this.schoolBox);
             this.registerBox.Controls.Add(this.nat_textBox);
             this.registerBox.Controls.Add(this.name_textBox);
-            this.registerBox.Controls.Add(this.monthCalendar1);
-            this.registerBox.Location = new System.Drawing.Point(759, 291);
+            this.registerBox.Location = new System.Drawing.Point(1018, 292);
             this.registerBox.Name = "registerBox";
-            this.registerBox.Size = new System.Drawing.Size(314, 422);
+            this.registerBox.Size = new System.Drawing.Size(314, 438);
             this.registerBox.TabIndex = 12;
             this.registerBox.TabStop = false;
             this.registerBox.Text = "New Test User";
@@ -355,7 +414,7 @@
             // isFilled
             // 
             this.isFilled.AutoSize = true;
-            this.isFilled.Location = new System.Drawing.Point(38, 366);
+            this.isFilled.Location = new System.Drawing.Point(38, 400);
             this.isFilled.Name = "isFilled";
             this.isFilled.Size = new System.Drawing.Size(67, 17);
             this.isFilled.TabIndex = 9;
@@ -366,11 +425,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(124, 150);
+            this.label4.Location = new System.Drawing.Point(25, 235);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 13);
+            this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Birth Date";
+            this.label4.Text = "Age (18-38)";
             // 
             // label3
             // 
@@ -384,7 +443,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(164, 36);
+            this.label2.Location = new System.Drawing.Point(25, 158);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 6;
@@ -401,7 +460,7 @@
             // 
             // registerBtn
             // 
-            this.registerBtn.Location = new System.Drawing.Point(143, 359);
+            this.registerBtn.Location = new System.Drawing.Point(143, 393);
             this.registerBtn.Name = "registerBtn";
             this.registerBtn.Size = new System.Drawing.Size(135, 29);
             this.registerBtn.TabIndex = 4;
@@ -427,9 +486,9 @@
             // 
             // nat_textBox
             // 
-            this.nat_textBox.Location = new System.Drawing.Point(167, 58);
+            this.nat_textBox.Location = new System.Drawing.Point(28, 180);
             this.nat_textBox.Name = "nat_textBox";
-            this.nat_textBox.Size = new System.Drawing.Size(100, 20);
+            this.nat_textBox.Size = new System.Drawing.Size(168, 20);
             this.nat_textBox.TabIndex = 2;
             this.nat_textBox.TextChanged += new System.EventHandler(this.nat_textBox_TextChanged);
             // 
@@ -437,18 +496,45 @@
             // 
             this.name_textBox.Location = new System.Drawing.Point(28, 58);
             this.name_textBox.Name = "name_textBox";
-            this.name_textBox.Size = new System.Drawing.Size(100, 20);
+            this.name_textBox.Size = new System.Drawing.Size(168, 20);
             this.name_textBox.TabIndex = 1;
             this.name_textBox.TextChanged += new System.EventHandler(this.name_textBox_TextChanged);
             // 
-            // monthCalendar1
+            // ageTrackBar
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(63, 166);
-            this.monthCalendar1.MaxSelectionCount = 1;
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.ShowToday = false;
-            this.monthCalendar1.TabIndex = 0;
-            this.monthCalendar1.TodayDate = new System.DateTime(1996, 1, 21, 0, 0, 0, 0);
+            this.ageTrackBar.Location = new System.Drawing.Point(28, 265);
+            this.ageTrackBar.Maximum = 38;
+            this.ageTrackBar.Minimum = 18;
+            this.ageTrackBar.Name = "ageTrackBar";
+            this.ageTrackBar.Size = new System.Drawing.Size(239, 45);
+            this.ageTrackBar.TabIndex = 10;
+            this.ageTrackBar.Value = 20;
+            this.ageTrackBar.ValueChanged += new System.EventHandler(this.ageTrackBar_ValueChanged);
+            // 
+            // ageBox
+            // 
+            this.ageBox.Enabled = false;
+            this.ageBox.Location = new System.Drawing.Point(93, 232);
+            this.ageBox.Name = "ageBox";
+            this.ageBox.Size = new System.Drawing.Size(49, 20);
+            this.ageBox.TabIndex = 11;
+            this.ageBox.TextChanged += new System.EventHandler(this.ageBox_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(25, 315);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Occupation";
+            // 
+            // occup_textBox
+            // 
+            this.occup_textBox.Location = new System.Drawing.Point(28, 337);
+            this.occup_textBox.Name = "occup_textBox";
+            this.occup_textBox.Size = new System.Drawing.Size(168, 20);
+            this.occup_textBox.TabIndex = 12;
             // 
             // mainMenu
             // 
@@ -456,7 +542,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1366, 745);
+            this.ClientSize = new System.Drawing.Size(1366, 976);
             this.Controls.Add(this.registerBox);
             this.Controls.Add(this.coloringBox);
             this.Controls.Add(this.progress);
@@ -477,6 +563,8 @@
             this.control.ResumeLayout(false);
             this.testFrame.ResumeLayout(false);
             this.testFrame.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -484,6 +572,7 @@
             this.coloringBox.ResumeLayout(false);
             this.registerBox.ResumeLayout(false);
             this.registerBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ageTrackBar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -522,9 +611,16 @@
         private System.Windows.Forms.ComboBox schoolBox;
         private System.Windows.Forms.TextBox nat_textBox;
         private System.Windows.Forms.TextBox name_textBox;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox isFilled;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.RadioButton picture6;
+        private System.Windows.Forms.RadioButton picture5;
+        private System.Windows.Forms.TextBox ageBox;
+        private System.Windows.Forms.TrackBar ageTrackBar;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox occup_textBox;
     }
 }
 
