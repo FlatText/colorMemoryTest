@@ -14,11 +14,8 @@ namespace brandcolorrecog
     {
         public mainMenu()
         {
-            InitializeComponent();            
-
-            /* FOR FUTURE USE FOR TEST_2 */
-            //pannonLogo.BackColor = Color.Red;
-
+            InitializeComponent();         
+            
             //enable resolution warning - we dont know the screen resolution yet
             test1Btn.Enabled = false;
             resoWarning.Show();
@@ -64,22 +61,28 @@ namespace brandcolorrecog
             /* Size of testFrame */
             testFrame.Size = new System.Drawing.Size(1800, 925);
 
-            /* Picture 1-2-3-4 & Radiobuttons 1-2-3-4 */
+            /* Picture 1-6 & Radiobuttons 1-6 */
             pictureBox1.Size = new System.Drawing.Size(370, 270);
             pictureBox2.Size = new System.Drawing.Size(370, 270);
             pictureBox3.Size = new System.Drawing.Size(370, 270);
-            pictureBox4.Size = new System.Drawing.Size(370, 270);                     
+            pictureBox4.Size = new System.Drawing.Size(370, 270);
+            pictureBox5.Size = new System.Drawing.Size(370, 270);
+            pictureBox6.Size = new System.Drawing.Size(370, 270);
 
-            picture1.Location = new Point(180, 150);
-            picture2.Location = new Point(680, 150);
-            picture3.Location = new Point(180, 450);
-            picture4.Location = new Point(680, 450);
+            pictureBox1.Location = new Point(200, 200);
+            pictureBox2.Location = new Point(700, 200);
+            pictureBox3.Location = new Point(1200, 200);
+            pictureBox4.Location = new Point(200, 600);
+            pictureBox5.Location = new Point(700, 600);
+            pictureBox6.Location = new Point(1200, 600);
 
-            pictureBox1.Location = new Point(200, 25);
-            pictureBox2.Location = new Point(700, 25);
-            pictureBox3.Location = new Point(200, 325);
-            pictureBox4.Location = new Point(700, 325);           
-        
+            picture1.Location = new Point(180, 335);
+            picture2.Location = new Point(680, 335);
+            picture3.Location = new Point(1180, 335);
+            picture4.Location = new Point(180, 735);
+            picture5.Location = new Point(680, 735);
+            picture6.Location = new Point(1180, 735);
+
             /* Hide next, back, reset buttons and interfaces */
             control.Hide();
             progress.Hide();
@@ -88,8 +91,8 @@ namespace brandcolorrecog
             registerBox.Hide();
 
             /* Disable back button, until TO DO some function */
-            //back.Enabled = false;
-            back.Hide();
+            back.Enabled = false;
+            //back.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -156,11 +159,6 @@ namespace brandcolorrecog
         {
             /* Store the data */
 
-            /*
-             *  TO DO
-             *  User Class
-             */
-
             TestUser Tester1 = new TestUser(
                 name_textBox.Text,
                 nat_textBox.Text,
@@ -217,9 +215,9 @@ namespace brandcolorrecog
             /* Let's decide which test is active */
             if (
                 (picture1.Checked = true) || 
-                (picture1.Checked = true) || 
-                (picture1.Checked = true) || 
-                (picture1.Checked = true)
+                (picture2.Checked = true) || 
+                (picture3.Checked = true) || 
+                (picture4.Checked = true)
                 )
             {
                 test_1_flag = true;
@@ -264,7 +262,14 @@ namespace brandcolorrecog
                 progress.Show();
                 control.Show();
             }
-
+            else if (test_2_flag == true)
+            {
+                /* TO DO */
+            }
+            else
+            {
+                /* ops */
+            }
 
             next.Enabled = false;
             next.BackColor = Color.DimGray;
@@ -319,6 +324,15 @@ namespace brandcolorrecog
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             picture4.Checked = true;
+        }
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            picture5.Checked = true;
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            picture6.Checked = true;
         }
 
         private void colorBtn_Click(object sender, EventArgs e)

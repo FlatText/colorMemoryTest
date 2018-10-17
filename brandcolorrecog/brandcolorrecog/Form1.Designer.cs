@@ -64,6 +64,10 @@
             this.nat_textBox = new System.Windows.Forms.TextBox();
             this.name_textBox = new System.Windows.Forms.TextBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.picture6 = new System.Windows.Forms.RadioButton();
+            this.picture5 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pannonLogo)).BeginInit();
             this.startBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resoWarningPic)).BeginInit();
@@ -75,6 +79,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.coloringBox.SuspendLayout();
             this.registerBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // test1Btn
@@ -199,6 +205,10 @@
             // 
             // testFrame
             // 
+            this.testFrame.Controls.Add(this.pictureBox5);
+            this.testFrame.Controls.Add(this.pictureBox6);
+            this.testFrame.Controls.Add(this.picture6);
+            this.testFrame.Controls.Add(this.picture5);
             this.testFrame.Controls.Add(this.pictureBox4);
             this.testFrame.Controls.Add(this.pictureBox3);
             this.testFrame.Controls.Add(this.pictureBox2);
@@ -209,7 +219,7 @@
             this.testFrame.Controls.Add(this.picture2);
             this.testFrame.Location = new System.Drawing.Point(14, 303);
             this.testFrame.Name = "testFrame";
-            this.testFrame.Size = new System.Drawing.Size(728, 427);
+            this.testFrame.Size = new System.Drawing.Size(984, 427);
             this.testFrame.TabIndex = 10;
             this.testFrame.TabStop = false;
             this.testFrame.Text = "id: testFrame";
@@ -218,7 +228,7 @@
             // 
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(411, 224);
+            this.pictureBox4.Location = new System.Drawing.Point(374, 222);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(270, 170);
             this.pictureBox4.TabIndex = 7;
@@ -240,7 +250,7 @@
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(411, 19);
+            this.pictureBox2.Location = new System.Drawing.Point(374, 19);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(270, 170);
             this.pictureBox2.TabIndex = 5;
@@ -345,7 +355,7 @@
             this.registerBox.Controls.Add(this.nat_textBox);
             this.registerBox.Controls.Add(this.name_textBox);
             this.registerBox.Controls.Add(this.monthCalendar1);
-            this.registerBox.Location = new System.Drawing.Point(759, 291);
+            this.registerBox.Location = new System.Drawing.Point(1018, 292);
             this.registerBox.Name = "registerBox";
             this.registerBox.Size = new System.Drawing.Size(314, 422);
             this.registerBox.TabIndex = 12;
@@ -450,6 +460,48 @@
             this.monthCalendar1.TabIndex = 0;
             this.monthCalendar1.TodayDate = new System.DateTime(1996, 1, 21, 0, 0, 0, 0);
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(708, 224);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(270, 170);
+            this.pictureBox5.TabIndex = 11;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(708, 19);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(270, 170);
+            this.pictureBox6.TabIndex = 10;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
+            // picture6
+            // 
+            this.picture6.AutoSize = true;
+            this.picture6.Location = new System.Drawing.Point(842, 398);
+            this.picture6.Name = "picture6";
+            this.picture6.Size = new System.Drawing.Size(14, 13);
+            this.picture6.TabIndex = 9;
+            this.picture6.TabStop = true;
+            this.picture6.UseVisualStyleBackColor = true;
+            // 
+            // picture5
+            // 
+            this.picture5.AutoSize = true;
+            this.picture5.Location = new System.Drawing.Point(842, 195);
+            this.picture5.Name = "picture5";
+            this.picture5.Size = new System.Drawing.Size(14, 13);
+            this.picture5.TabIndex = 8;
+            this.picture5.TabStop = true;
+            this.picture5.UseVisualStyleBackColor = true;
+            // 
             // mainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,6 +536,8 @@
             this.coloringBox.ResumeLayout(false);
             this.registerBox.ResumeLayout(false);
             this.registerBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -525,6 +579,10 @@
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox isFilled;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.RadioButton picture6;
+        private System.Windows.Forms.RadioButton picture5;
     }
 }
 
