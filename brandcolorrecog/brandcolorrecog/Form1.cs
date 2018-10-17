@@ -29,7 +29,7 @@ namespace brandcolorrecog
             int width = resolution.Width;            
             int height = resolution.Height;
             Console.WriteLine("Felbontás: {0} x {1}", width, height); /* FOR DEBUG */ 
-            if (width == 1366 && height == 768)
+            if (width == 1920 && height == 1080)
             {          
                 resoWarning.Hide();
                 resoWarningPic.Hide();
