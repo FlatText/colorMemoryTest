@@ -306,7 +306,7 @@
             // 
             this.progress.Location = new System.Drawing.Point(437, 12);
             this.progress.Name = "progress";
-            this.progress.Size = new System.Drawing.Size(681, 23);
+            this.progress.Size = new System.Drawing.Size(1500, 25);
             this.progress.TabIndex = 0;
             // 
             // coloringBox
@@ -455,7 +455,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1366, 745);
             this.Controls.Add(this.registerBox);
             this.Controls.Add(this.coloringBox);
