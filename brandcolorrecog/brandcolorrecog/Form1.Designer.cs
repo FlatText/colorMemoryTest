@@ -513,6 +513,7 @@
             // 
             // ageBox
             // 
+            this.ageBox.Enabled = false;
             this.ageBox.Location = new System.Drawing.Point(93, 232);
             this.ageBox.Name = "ageBox";
             this.ageBox.Size = new System.Drawing.Size(49, 20);

@@ -14,8 +14,8 @@ namespace brandcolorrecog
     {
         public mainMenu()
         {
-            InitializeComponent();         
-            
+            InitializeComponent();
+
             //enable resolution warning - we dont know the screen resolution yet
             test1Btn.Enabled = false;
             resoWarning.Show();
@@ -23,23 +23,23 @@ namespace brandcolorrecog
 
             //Resolution check
             Rectangle resolution = Screen.PrimaryScreen.Bounds;
-            int width = resolution.Width;            
+            int width = resolution.Width;
             int height = resolution.Height;
-            Console.WriteLine("Felbontás: {0} x {1}", width, height); /* FOR DEBUG */ 
+            Console.WriteLine("Felbontás: {0} x {1}", width, height); /* FOR DEBUG */
             if (width == 1920 && height == 1080)
-            {          
+            {
                 resoWarning.Hide();
                 resoWarningPic.Hide();
                 test1Btn.Enabled = true;
             }
-            
+
             /* Initial Progress Bar reset */
             progress.Value = 0;
 
             /* Initial Form Size */
             this.Size = new System.Drawing.Size(0, 0);
             this.Height = 350;
-            this.Width = 450;           
+            this.Width = 450;
 
             /* Setting the colors of the buttons */
             reset.BackColor = Color.Red;
@@ -97,7 +97,7 @@ namespace brandcolorrecog
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -107,8 +107,8 @@ namespace brandcolorrecog
 
         private void aboutBtn_Click(object sender, EventArgs e) /* calling the about page */
         {
-            AboutBox box = new AboutBox(); /*create a new AboutBox object */          
-            box.ShowDialog(); /* open it */            
+            AboutBox box = new AboutBox(); /*create a new AboutBox object */
+            box.ShowDialog(); /* open it */
         }
 
         private void pannonLogo_Click(object sender, EventArgs e)
@@ -118,7 +118,7 @@ namespace brandcolorrecog
 
         private void test1Btn_Click(object sender, EventArgs e)
         {
-            startBox.Hide();            
+            startBox.Hide();
             registerBox.Show();
             registerBtn.Enabled = false;
             this.Size = new System.Drawing.Size(385, 530);
@@ -187,7 +187,7 @@ namespace brandcolorrecog
             control.Show();
             progress.Show();
             testFrame.Show();
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;         
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
         private void reset_Click(object sender, EventArgs e)
@@ -216,9 +216,9 @@ namespace brandcolorrecog
 
             /* Let's decide which test is active */
             if (
-                (picture1.Checked = true) || 
-                (picture2.Checked = true) || 
-                (picture3.Checked = true) || 
+                (picture1.Checked = true) ||
+                (picture2.Checked = true) ||
+                (picture3.Checked = true) ||
                 (picture4.Checked = true)
                 )
             {
@@ -305,7 +305,7 @@ namespace brandcolorrecog
         {
             /*
              * Currently disabled. May TO DO in the future... ~
-             */ 
+             */
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -343,20 +343,22 @@ namespace brandcolorrecog
         }
         void betweenTestDelay(int _sec)
         {
-            System.Threading.Thread.Sleep(_sec*1000);
+            System.Threading.Thread.Sleep(_sec * 1000);
         }
 
         private void ageTrackBar_ValueChanged(object sender, EventArgs e)
         {
             ageBox.Text = ageTrackBar.Value.ToString();
         }
-
         private void ageBox_TextChanged(object sender, EventArgs e)
         {
-            if (Int32.Parse(ageBox.Text) > 17 && Int32.Parse(ageBox.Text) < 39)
-            {
-                ageTrackBar.Value = Int32.Parse(ageBox.Text);
-            }
+            /*
+             * No need for this if ageBox is not enabled.
+                if (Int32.Parse(ageBox.Text) > 17 && Int32.Parse(ageBox.Text) < 39)
+                {
+                    ageTrackBar.Value = Int32.Parse(ageBox.Text);
+                }
+             */
         }
     }
 }
