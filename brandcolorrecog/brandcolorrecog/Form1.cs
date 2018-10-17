@@ -121,7 +121,7 @@ namespace brandcolorrecog
             startBox.Hide();            
             registerBox.Show();
             registerBtn.Enabled = false;
-            this.Size = new System.Drawing.Size(385, 515);
+            this.Size = new System.Drawing.Size(385, 530);
         }
 
         /* flags to determine that the form is filled */
@@ -163,14 +163,16 @@ namespace brandcolorrecog
                 name_textBox.Text,
                 nat_textBox.Text,
                 schoolBox.Text,
-                monthCalendar1.SelectionRange.Start.ToString()
+                ageTrackBar.Value,
+                occup_textBox.Text
                 );
 
             /* Debug Class object creating */
             Console.WriteLine("Name: {0}", Tester1.getName());
             Console.WriteLine("Nationality: {0}", Tester1.getNat());
             Console.WriteLine("Faculty: {0}", Tester1.getFaculty());
-            Console.WriteLine("Birth: {0}", Tester1.getBirthdate());
+            Console.WriteLine("Age: {0}", Tester1.getAge());
+            Console.WriteLine("Occupation: {0}", Tester1.getOccup());
 
             /* Reset form for the next instance */
             registerBtn.Enabled = false;
@@ -344,5 +346,17 @@ namespace brandcolorrecog
             System.Threading.Thread.Sleep(_sec*1000);
         }
 
+        private void ageTrackBar_ValueChanged(object sender, EventArgs e)
+        {
+            ageBox.Text = ageTrackBar.Value.ToString();
+        }
+
+        private void ageBox_TextChanged(object sender, EventArgs e)
+        {
+            if (Int32.Parse(ageBox.Text) > 17 && Int32.Parse(ageBox.Text) < 39)
+            {
+                ageTrackBar.Value = Int32.Parse(ageBox.Text);
+            }
+        }
     }
 }

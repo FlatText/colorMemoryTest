@@ -11,18 +11,20 @@ namespace brandcolorrecog
         private string name;
         private string nat;
         private string faculty;
-        private string birthdate;
+        private int age;
+        private string occup;
 
         /*
          * TO DO: variables for different test results
          */
 
-        public TestUser(string _name, string _nat, string _faculty, string _birthdate)
+        public TestUser(string _name, string _nat, string _faculty, int _age, string _occup)
         {
             this.name = _name;
             this.nat = _nat;
             this.faculty = _faculty;
-            this.birthdate = _birthdate;
+            this.age = _age;
+            this.occup = _occup;
         }
 
 
@@ -55,9 +57,13 @@ namespace brandcolorrecog
         {
             return this.faculty;
         }
-        public string getBirthdate()
+        public int getAge()
         {
-            return this.birthdate;
+            return this.age;
+        }
+        public string getOccup()
+        {
+            return this.occup;
         }
     }
 }
