@@ -14,7 +14,7 @@ namespace brandcolorrecog
     {
         public mainMenu()
         {
-            InitializeComponent();
+            InitializeComponent();            
 
             /* FOR FUTURE USE FOR TEST_2 */
             //pannonLogo.BackColor = Color.Red;
@@ -29,7 +29,7 @@ namespace brandcolorrecog
             int width = resolution.Width;            
             int height = resolution.Height;
             Console.WriteLine("Felbontás: {0} x {1}", width, height); /* FOR DEBUG */ 
-            if (width == 1366 && height == 768)
+            if (width == 1920 && height == 1080)
             {          
                 resoWarning.Hide();
                 resoWarningPic.Hide();
@@ -50,9 +50,9 @@ namespace brandcolorrecog
             next.BackColor = Color.DimGray;
 
             /* Position of 'control' grpBox */
-            control.Location = new Point(1200, 680);
+            control.Location = new Point(1760, 980);
             /* Position of progress bar */
-            progress.Location = new Point(300, 705);
+            progress.Location = new Point(100, 1000);
             /* Position of testFrame */
             testFrame.Location = new Point(25, 25);
             /* Position of colorBox */
@@ -62,7 +62,7 @@ namespace brandcolorrecog
             /* Size of coloringBox */
             coloringBox.Size = new System.Drawing.Size(1275, 625);
             /* Size of testFrame */
-            testFrame.Size = new System.Drawing.Size(1275, 625);
+            testFrame.Size = new System.Drawing.Size(1800, 925);
 
             /* Picture 1-2-3-4 & Radiobuttons 1-2-3-4 */
             pictureBox1.Size = new System.Drawing.Size(370, 270);
@@ -120,6 +120,7 @@ namespace brandcolorrecog
             registerBtn.Enabled = false;
             this.Size = new System.Drawing.Size(385, 515);
         }
+
         /* flags to determine that the form is filled */
         bool isFilled_flag_1 = false;
         bool isFilled_flag_2 = false;
@@ -147,11 +148,7 @@ namespace brandcolorrecog
                 if (isFilled.Checked != false)
                 {
                     System.Windows.Forms.MessageBox.Show("Please fill the boxes!");
-                }
-                else
-                {
-                    /* DO NOTHING I GUESS? */
-
+                    isFilled.Checked = false;
                 }
             }
         }
@@ -256,8 +253,19 @@ namespace brandcolorrecog
                 //Resetting the radiobuttons after choosing an image
                 picture1.Checked = true;
                 picture1.Checked = false;
+                /* Hide stuff for 10 seconds to let the tester's eye to recover */
+                testFrame.Hide();
+                progress.Hide();
+                control.Hide();
+
+                betweenTestDelay(10); //delay 
+
+                testFrame.Show();
+                progress.Show();
+                control.Show();
             }
-            
+
+
             next.Enabled = false;
             next.BackColor = Color.DimGray;
         }
@@ -317,7 +325,10 @@ namespace brandcolorrecog
         {
             colors.ShowDialog();
         }
-
+        void betweenTestDelay(int _sec)
+        {
+            System.Threading.Thread.Sleep(_sec*1000);
+        }
 
     }
 }
