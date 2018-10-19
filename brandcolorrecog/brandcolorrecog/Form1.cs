@@ -118,10 +118,12 @@ namespace brandcolorrecog
 
         private void test1Btn_Click(object sender, EventArgs e)
         {
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             startBox.Hide();
             registerBox.Show();
+            registerBox.Location = new Point(750, 250);
             registerBtn.Enabled = false;
-            this.Size = new System.Drawing.Size(385, 530);
+            //this.Size = new System.Drawing.Size(385, 530);
         }
 
         /* flags to determine that the form is filled */
@@ -187,7 +189,6 @@ namespace brandcolorrecog
             control.Show();
             progress.Show();
             testFrame.Show();
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
         private void reset_Click(object sender, EventArgs e)
@@ -206,6 +207,12 @@ namespace brandcolorrecog
             /* because no radiobuttons selected, therefore next button is not available
              * so its color is Grey */
             next.BackColor = Color.DimGray;
+            /* Reset form */
+            name_textBox.Text = null;
+            nat_textBox.Text = null;
+            schoolBox.Text = null;
+            ageTrackBar.Value = 20;
+            occup_textBox.Text = null;
         }
 
         private void next_Click(object sender, EventArgs e)
@@ -301,6 +308,18 @@ namespace brandcolorrecog
             next.BackColor = Color.Green;
         }
 
+        private void picture5_CheckedChanged(object sender, EventArgs e)
+        {
+            next.Enabled = true;
+            next.BackColor = Color.Green;
+        }
+
+        private void picture6_CheckedChanged(object sender, EventArgs e)
+        {
+            next.Enabled = true;
+            next.BackColor = Color.Green;
+        }
+
         private void back_Click(object sender, EventArgs e)
         {
             /*
@@ -360,5 +379,6 @@ namespace brandcolorrecog
                 }
              */
         }
+
     }
 }

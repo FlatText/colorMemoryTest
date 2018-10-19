@@ -58,6 +58,10 @@
             this.colorBtn = new System.Windows.Forms.Button();
             this.colors = new System.Windows.Forms.ColorDialog();
             this.registerBox = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.occup_textBox = new System.Windows.Forms.TextBox();
+            this.ageBox = new System.Windows.Forms.TextBox();
+            this.ageTrackBar = new System.Windows.Forms.TrackBar();
             this.isFilled = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -67,10 +71,6 @@
             this.schoolBox = new System.Windows.Forms.ComboBox();
             this.nat_textBox = new System.Windows.Forms.TextBox();
             this.name_textBox = new System.Windows.Forms.TextBox();
-            this.ageTrackBar = new System.Windows.Forms.TrackBar();
-            this.ageBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.occup_textBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pannonLogo)).BeginInit();
             this.startBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resoWarningPic)).BeginInit();
@@ -158,9 +158,9 @@
             this.resoWarning.ForeColor = System.Drawing.Color.Red;
             this.resoWarning.Location = new System.Drawing.Point(26, 84);
             this.resoWarning.Name = "resoWarning";
-            this.resoWarning.Size = new System.Drawing.Size(109, 13);
+            this.resoWarning.Size = new System.Drawing.Size(115, 13);
             this.resoWarning.TabIndex = 5;
-            this.resoWarning.Text = "Please use 1366x768";
+            this.resoWarning.Text = "Please use 1920x1080";
             // 
             // reset
             // 
@@ -259,6 +259,7 @@
             this.picture6.TabIndex = 9;
             this.picture6.TabStop = true;
             this.picture6.UseVisualStyleBackColor = true;
+            this.picture6.CheckedChanged += new System.EventHandler(this.picture6_CheckedChanged);
             // 
             // picture5
             // 
@@ -269,6 +270,7 @@
             this.picture5.TabIndex = 8;
             this.picture5.TabStop = true;
             this.picture5.UseVisualStyleBackColor = true;
+            this.picture5.CheckedChanged += new System.EventHandler(this.picture5_CheckedChanged);
             // 
             // pictureBox4
             // 
@@ -411,6 +413,42 @@
             this.registerBox.TabStop = false;
             this.registerBox.Text = "New Test User";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(25, 315);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Occupation";
+            // 
+            // occup_textBox
+            // 
+            this.occup_textBox.Location = new System.Drawing.Point(28, 337);
+            this.occup_textBox.Name = "occup_textBox";
+            this.occup_textBox.Size = new System.Drawing.Size(168, 20);
+            this.occup_textBox.TabIndex = 12;
+            // 
+            // ageBox
+            // 
+            this.ageBox.Enabled = false;
+            this.ageBox.Location = new System.Drawing.Point(93, 232);
+            this.ageBox.Name = "ageBox";
+            this.ageBox.Size = new System.Drawing.Size(49, 20);
+            this.ageBox.TabIndex = 11;
+            this.ageBox.TextChanged += new System.EventHandler(this.ageBox_TextChanged);
+            // 
+            // ageTrackBar
+            // 
+            this.ageTrackBar.Location = new System.Drawing.Point(28, 265);
+            this.ageTrackBar.Maximum = 38;
+            this.ageTrackBar.Minimum = 18;
+            this.ageTrackBar.Name = "ageTrackBar";
+            this.ageTrackBar.Size = new System.Drawing.Size(239, 45);
+            this.ageTrackBar.TabIndex = 10;
+            this.ageTrackBar.Value = 20;
+            this.ageTrackBar.ValueChanged += new System.EventHandler(this.ageTrackBar_ValueChanged);
+            // 
             // isFilled
             // 
             this.isFilled.AutoSize = true;
@@ -499,42 +537,6 @@
             this.name_textBox.Size = new System.Drawing.Size(168, 20);
             this.name_textBox.TabIndex = 1;
             this.name_textBox.TextChanged += new System.EventHandler(this.name_textBox_TextChanged);
-            // 
-            // ageTrackBar
-            // 
-            this.ageTrackBar.Location = new System.Drawing.Point(28, 265);
-            this.ageTrackBar.Maximum = 38;
-            this.ageTrackBar.Minimum = 18;
-            this.ageTrackBar.Name = "ageTrackBar";
-            this.ageTrackBar.Size = new System.Drawing.Size(239, 45);
-            this.ageTrackBar.TabIndex = 10;
-            this.ageTrackBar.Value = 20;
-            this.ageTrackBar.ValueChanged += new System.EventHandler(this.ageTrackBar_ValueChanged);
-            // 
-            // ageBox
-            // 
-            this.ageBox.Enabled = false;
-            this.ageBox.Location = new System.Drawing.Point(93, 232);
-            this.ageBox.Name = "ageBox";
-            this.ageBox.Size = new System.Drawing.Size(49, 20);
-            this.ageBox.TabIndex = 11;
-            this.ageBox.TextChanged += new System.EventHandler(this.ageBox_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 315);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Occupation";
-            // 
-            // occup_textBox
-            // 
-            this.occup_textBox.Location = new System.Drawing.Point(28, 337);
-            this.occup_textBox.Name = "occup_textBox";
-            this.occup_textBox.Size = new System.Drawing.Size(168, 20);
-            this.occup_textBox.TabIndex = 12;
             // 
             // mainMenu
             // 
