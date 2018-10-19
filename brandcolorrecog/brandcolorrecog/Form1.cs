@@ -43,11 +43,11 @@ namespace brandcolorrecog
 
             /* Setting the colors of the buttons */
             reset.BackColor = Color.Red;
-            back.BackColor = Color.DimGray;
+            help.BackColor = Color.Blue;
             next.BackColor = Color.DimGray;
 
             /* Position of 'control' grpBox */
-            control.Location = new Point(1760, 980);
+            control.Location = new Point(1715, 955);
             /* Position of progress bar */
             progress.Location = new Point(100, 1000);
             /* Position of testFrame */
@@ -83,16 +83,12 @@ namespace brandcolorrecog
             picture5.Location = new Point(680, 735);
             picture6.Location = new Point(1180, 735);
 
-            /* Hide next, back, reset buttons and interfaces */
+            /* Hide next, help, reset buttons and interfaces */
             control.Hide();
             progress.Hide();
             testFrame.Hide();
             coloringBox.Hide();
             registerBox.Hide();
-
-            /* Disable back button, until TO DO some function */
-            back.Enabled = false;
-            //back.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -118,10 +114,12 @@ namespace brandcolorrecog
 
         private void test1Btn_Click(object sender, EventArgs e)
         {
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             startBox.Hide();
             registerBox.Show();
+            registerBox.Location = new Point(750, 250);
             registerBtn.Enabled = false;
-            this.Size = new System.Drawing.Size(385, 530);
+            //this.Size = new System.Drawing.Size(385, 530);
         }
 
         /* flags to determine that the form is filled */
@@ -187,7 +185,6 @@ namespace brandcolorrecog
             control.Show();
             progress.Show();
             testFrame.Show();
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
         private void reset_Click(object sender, EventArgs e)
@@ -206,6 +203,12 @@ namespace brandcolorrecog
             /* because no radiobuttons selected, therefore next button is not available
              * so its color is Grey */
             next.BackColor = Color.DimGray;
+            /* Reset form */
+            name_textBox.Text = null;
+            nat_textBox.Text = null;
+            schoolBox.Text = null;
+            ageTrackBar.Value = 20;
+            occup_textBox.Text = null;
         }
 
         private void next_Click(object sender, EventArgs e)
@@ -301,11 +304,23 @@ namespace brandcolorrecog
             next.BackColor = Color.Green;
         }
 
-        private void back_Click(object sender, EventArgs e)
+        private void picture5_CheckedChanged(object sender, EventArgs e)
         {
-            /*
-             * Currently disabled. May TO DO in the future... ~
-             */
+            next.Enabled = true;
+            next.BackColor = Color.Green;
+        }
+
+        private void picture6_CheckedChanged(object sender, EventArgs e)
+        {
+            next.Enabled = true;
+            next.BackColor = Color.Green;
+        }
+
+        private void help_Click(object sender, EventArgs e)
+        {
+            //make a popupform 
+            var helperForm = new FormPopupHelp();
+            helperForm.ShowDialog();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -360,5 +375,6 @@ namespace brandcolorrecog
                 }
              */
         }
+
     }
 }
