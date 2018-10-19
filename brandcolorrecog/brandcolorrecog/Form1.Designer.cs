@@ -38,7 +38,7 @@
             this.resoWarning = new System.Windows.Forms.Label();
             this.reset = new System.Windows.Forms.Button();
             this.next = new System.Windows.Forms.Button();
-            this.back = new System.Windows.Forms.Button();
+            this.help = new System.Windows.Forms.Button();
             this.control = new System.Windows.Forms.GroupBox();
             this.testFrame = new System.Windows.Forms.GroupBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -165,9 +165,10 @@
             // reset
             // 
             this.reset.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.reset.Location = new System.Drawing.Point(100, 16);
+            this.reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reset.Location = new System.Drawing.Point(125, 22);
             this.reset.Name = "reset";
-            this.reset.Size = new System.Drawing.Size(42, 37);
+            this.reset.Size = new System.Drawing.Size(50, 50);
             this.reset.TabIndex = 6;
             this.reset.Text = "X";
             this.reset.UseVisualStyleBackColor = false;
@@ -176,36 +177,38 @@
             // next
             // 
             this.next.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.next.Location = new System.Drawing.Point(52, 16);
+            this.next.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.next.Location = new System.Drawing.Point(69, 22);
             this.next.Name = "next";
-            this.next.Size = new System.Drawing.Size(42, 37);
+            this.next.Size = new System.Drawing.Size(50, 50);
             this.next.TabIndex = 7;
             this.next.Text = ">";
             this.next.UseVisualStyleBackColor = false;
             this.next.Click += new System.EventHandler(this.next_Click);
             // 
-            // back
+            // help
             // 
-            this.back.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.back.Location = new System.Drawing.Point(4, 16);
-            this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(42, 37);
-            this.back.TabIndex = 8;
-            this.back.Text = "<";
-            this.back.UseVisualStyleBackColor = false;
-            this.back.Click += new System.EventHandler(this.back_Click);
+            this.help.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.help.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.help.Location = new System.Drawing.Point(13, 22);
+            this.help.Name = "help";
+            this.help.Size = new System.Drawing.Size(50, 50);
+            this.help.TabIndex = 8;
+            this.help.Text = "?";
+            this.help.UseVisualStyleBackColor = false;
+            this.help.Click += new System.EventHandler(this.help_Click);
             // 
             // control
             // 
-            this.control.Controls.Add(this.back);
+            this.control.Controls.Add(this.help);
             this.control.Controls.Add(this.next);
             this.control.Controls.Add(this.reset);
-            this.control.Location = new System.Drawing.Point(564, 204);
+            this.control.Location = new System.Drawing.Point(537, 185);
             this.control.Name = "control";
-            this.control.Size = new System.Drawing.Size(154, 70);
+            this.control.Size = new System.Drawing.Size(191, 89);
             this.control.TabIndex = 9;
             this.control.TabStop = false;
-            this.control.Text = "Back / Next / Reset";
+            this.control.Text = "Help / Next / Reset";
             // 
             // testFrame
             // 
@@ -588,7 +591,7 @@
         private System.Windows.Forms.GroupBox startBox;
         private System.Windows.Forms.Button reset;
         private System.Windows.Forms.Button next;
-        private System.Windows.Forms.Button back;
+        private System.Windows.Forms.Button help;
         private System.Windows.Forms.GroupBox control;
         private System.Windows.Forms.GroupBox testFrame;
         private System.Windows.Forms.ProgressBar progress;

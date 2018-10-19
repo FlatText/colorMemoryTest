@@ -43,11 +43,11 @@ namespace brandcolorrecog
 
             /* Setting the colors of the buttons */
             reset.BackColor = Color.Red;
-            back.BackColor = Color.DimGray;
+            help.BackColor = Color.Blue;
             next.BackColor = Color.DimGray;
 
             /* Position of 'control' grpBox */
-            control.Location = new Point(1760, 980);
+            control.Location = new Point(1715, 955);
             /* Position of progress bar */
             progress.Location = new Point(100, 1000);
             /* Position of testFrame */
@@ -83,16 +83,12 @@ namespace brandcolorrecog
             picture5.Location = new Point(680, 735);
             picture6.Location = new Point(1180, 735);
 
-            /* Hide next, back, reset buttons and interfaces */
+            /* Hide next, help, reset buttons and interfaces */
             control.Hide();
             progress.Hide();
             testFrame.Hide();
             coloringBox.Hide();
             registerBox.Hide();
-
-            /* Disable back button, until TO DO some function */
-            back.Enabled = false;
-            //back.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -320,10 +316,10 @@ namespace brandcolorrecog
             next.BackColor = Color.Green;
         }
 
-        private void back_Click(object sender, EventArgs e)
+        private void help_Click(object sender, EventArgs e)
         {
             /*
-             * Currently disabled. May TO DO in the future... ~
+             * Help button
              */
         }
 
