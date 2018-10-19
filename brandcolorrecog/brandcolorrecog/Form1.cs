@@ -318,9 +318,9 @@ namespace brandcolorrecog
 
         private void help_Click(object sender, EventArgs e)
         {
-            /*
-             * Help button
-             */
+            //make a popupform 
+            var helperForm = new FormPopupHelp();
+            helperForm.ShowDialog();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
