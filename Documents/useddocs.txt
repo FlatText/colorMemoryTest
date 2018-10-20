@@ -1,3 +1,5 @@
 https://stackoverflow.com/questions/15292880/create-sqlite-database-and-table
 
 http://blog.tigrangasparian.com/2012/02/09/getting-started-with-sqlite-in-c-part-one/
+
+https://stackoverflow.com/questions/16463599/popup-window-in-winform-c-sharp

@@ -16,6 +16,8 @@ namespace brandcolorrecog
         {
             InitializeComponent();
 
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+
             //enable resolution warning - we dont know the screen resolution yet
             test1Btn.Enabled = false;
             resoWarning.Show();
@@ -42,10 +44,16 @@ namespace brandcolorrecog
             this.Width = 450;
 
             /* Setting the colors of the buttons */
-            reset.BackColor = Color.Red;
-            help.BackColor = Color.Blue;
+            reset.BackColor = Color.DimGray;
+            help.BackColor = Color.DimGray;
             next.BackColor = Color.DimGray;
 
+            reset.Enabled = false;
+            help.Enabled = false;
+            next.Enabled = false;
+
+            /* Position of startBox */
+            startBox.Location = new Point(750, 250);
             /* Position of 'control' grpBox */
             control.Location = new Point(1715, 955);
             /* Position of progress bar */
@@ -55,7 +63,8 @@ namespace brandcolorrecog
             /* Position of colorBox */
             coloringBox.Location = new Point(25, 25);
             /* Position of registerForm */
-            registerBox.Location = new Point(25, 25);
+            registerBox.Location = new Point(750, 250);
+
             /* Size of coloringBox */
             coloringBox.Size = new System.Drawing.Size(1275, 625);
             /* Size of testFrame */
@@ -83,8 +92,10 @@ namespace brandcolorrecog
             picture5.Location = new Point(680, 735);
             picture6.Location = new Point(1180, 735);
 
-            /* Hide next, help, reset buttons and interfaces */
-            control.Hide();
+            control.Show();
+
+            /* Hide and interfaces */
+            //control.Hide();
             progress.Hide();
             testFrame.Hide();
             coloringBox.Hide();
@@ -114,12 +125,9 @@ namespace brandcolorrecog
 
         private void test1Btn_Click(object sender, EventArgs e)
         {
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             startBox.Hide();
-            registerBox.Show();
-            registerBox.Location = new Point(750, 250);
+            registerBox.Show();            
             registerBtn.Enabled = false;
-            //this.Size = new System.Drawing.Size(385, 530);
         }
 
         /* flags to determine that the form is filled */
@@ -155,8 +163,6 @@ namespace brandcolorrecog
         }
         private void registerBtn_Click(object sender, EventArgs e)
         {
-            /* Store the data */
-
             TestUser Tester1 = new TestUser(
                 name_textBox.Text,
                 nat_textBox.Text,
@@ -182,16 +188,19 @@ namespace brandcolorrecog
 
             /* Open up the next part */
             registerBox.Hide();
-            control.Show();
             progress.Show();
             testFrame.Show();
+
+            reset.BackColor = Color.Red;
+            help.BackColor = Color.Blue;
+            reset.Enabled = true;
+            help.Enabled = true;
         }
 
         private void reset_Click(object sender, EventArgs e)
         {
             /* Resetting the interface */
             startBox.Show();
-            control.Hide();
             progress.Hide();
             testFrame.Hide();
             coloringBox.Hide();
@@ -200,15 +209,24 @@ namespace brandcolorrecog
             /* Resetting the radiobuttons after choosing an image */
             picture1.Checked = true;
             picture1.Checked = false;
-            /* because no radiobuttons selected, therefore next button is not available
-             * so its color is Grey */
-            next.BackColor = Color.DimGray;
+
             /* Reset form */
             name_textBox.Text = null;
             nat_textBox.Text = null;
             schoolBox.Text = null;
             ageTrackBar.Value = 20;
             occup_textBox.Text = null;
+
+            /* in case: reset -> new test -> reset on register form */
+            registerBox.Hide();
+
+            /* Instead disabling the controlbox, disable the buttons */
+            help.Enabled = false;
+            next.Enabled = false;
+            reset.Enabled = false;
+            next.BackColor = Color.DimGray;
+            help.BackColor = Color.DimGray;
+            reset.BackColor = Color.DimGray;
         }
 
         private void next_Click(object sender, EventArgs e)
@@ -246,9 +264,7 @@ namespace brandcolorrecog
                 progress.Show();
                 testFrame.Hide();
                 coloringBox.Show();
-                progress.Value = 0; // Until TO DO is done
-                //System.Windows.Forms.MessageBox.Show("You finished the test! Thanks for your participation.");
-                //reset_Click(sender, e);
+                progress.Value = 0; 
             }
 
             if (test_1_flag == true)
